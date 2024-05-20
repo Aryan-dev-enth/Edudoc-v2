@@ -8,21 +8,28 @@ import { useUser } from "@clerk/nextjs";
 const Page = () => {
   const { isLoaded, isSignedIn, user } = useUser();
   const [updated, setUpdated] = useState(false);
-  const [data, setData] = useState(null);
+  const [verifiedNotes, setVerifiedNotes] = useState(null);
+  const [allNotes, setAllNotes] = useState(null);
 
   useEffect(() => {
     const fetchNotes = async () => {
       if (user) {
         console.log(user.publicMetadata);
         const isAdmin = user.publicMetadata.isAdmin ? true : false;
-        console.log(isAdmin);
+
         try {
-          const response = await getNotes(isAdmin);
-      
-          setData(response.data.data);
-          setUpdated(false)
-          console.log(data)
-          console.log(data)
+          if (isAdmin) {
+            const allNotesResponse = await getNotes(true);
+            setAllNotes(allNotesResponse.data.data);
+
+            const verifiedNotesResponse = await getNotes(false);
+            setVerifiedNotes(verifiedNotesResponse.data.data);
+          } else {
+            const verifiedNotesResponse = await getNotes(false);
+            setVerifiedNotes(verifiedNotesResponse.data.data);
+          }
+
+          setUpdated(false);
         } catch (error) {
           console.error("Error fetching notes:", error);
         }
@@ -45,7 +52,22 @@ const Page = () => {
         Don't worry, we got you covered!
       </h4>
       <Search />
-      {data ? <DocumentContainer data={data} setUpdated={setUpdated}/> : <h1>Nothing to display</h1>}
+      {verifiedNotes ? (
+        <>
+          <h2 className="text-2xl font-bold text-black">Verified Notes</h2>
+          <DocumentContainer data={verifiedNotes} setUpdated={setUpdated} />
+        </>
+      ) : (
+        <h1>Nothing to display for verified notes</h1>
+      )}
+      {user.publicMetadata.isAdmin && allNotes ? (
+        <>
+          <h2 className="text-2xl font-bold text-black">All Notes</h2>
+          <DocumentContainer data={allNotes} setUpdated={setUpdated} />
+        </>
+      ) : (
+        user.publicMetadata.isAdmin && <h1>Nothing to display for all notes</h1>
+      )}
     </div>
   );
 };

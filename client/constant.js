@@ -1,142 +1,141 @@
 // constant.js
 
 export const navbarLinks = [
-    {
-      name: 'Home',
-      url: '/'
-    },
-    {
-      name: 'Publish Note',
-      url: '/publish-note'
-    },
-    {
-      name: 'Notes & Question Papers',
-      url: '/all-notes'
-    }
-  ];
-  
-  export const dataSection = [
-    {
-        name: "Views",
-        number: "1K",
-        tagLine: "INcreaing day by day",
-    },
-    {
-        name: "Institutions",
-        number: "100",
-        tagLine: "Accross the Globe"
-    },
-    {
-        name: "Users",
-        number: "78",
-        tagLine: "Growing !"
-    }
-  ]
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "Publish Note",
+    url: "/publish-note",
+  },
+  {
+    name: "Notes & Question Papers",
+    url: "/all-notes",
+  },
+];
 
-  export const fewFileNav = [
-    {
-        name: "Notes",
-        document_type: 1,
-    },
-    {
-        name: "Question Paper",
-        document_type: 2,
-    }
-  ]
+export const dataSection = [
+  {
+    name: "Views",
+    number: "1K",
+    tagLine: "INcreaing day by day",
+  },
+  {
+    name: "Institutions",
+    number: "100",
+    tagLine: "Accross the Globe",
+  },
+  {
+    name: "Users",
+    number: "78",
+    tagLine: "Growing !",
+  },
+];
 
-  export const fileData = [
-    {
-      name: "Sample Document 1",
-      description: "This is a sample document description.",
-      imageUrl: "https://via.placeholder.com/150",
-      iconUrl: "https://via.placeholder.com/30",
-      document_type: 1 // 1 for notes
-    },
-    {
-      name: "Sample Question Paper 1",
-      description: "This is a sample question paper description.",
-      imageUrl: "https://via.placeholder.com/160",
-      iconUrl: "https://via.placeholder.com/40",
-      document_type: 2 // 2 for question paper
-    },
-    {
-      name: "Sample Document 2",
-      description: "This is another sample document description.",
-      imageUrl: "https://via.placeholder.com/170",
-      iconUrl: "https://via.placeholder.com/50",
-      document_type: 1 // 1 for notes
-    },
-    {
-      name: "Sample Question Paper 2",
-      description: "This is another sample question paper description.",
-      imageUrl: "https://via.placeholder.com/180",
-      iconUrl: "https://via.placeholder.com/60",
-      document_type: 2 // 2 for question paper
-    },
-    {
-      name: "Sample Document 3",
-      description: "Yet another sample document description.",
-      imageUrl: "https://via.placeholder.com/190",
-      iconUrl: "https://via.placeholder.com/70",
-      document_type: 1 // 1 for notes
-    },
-    {
-      name: "Sample Question Paper 3",
-      description: "Yet another sample question paper description.",
-      imageUrl: "https://via.placeholder.com/200",
-      iconUrl: "https://via.placeholder.com/80",
-      document_type: 2 // 2 for question paper
-    },
-    {
-      name: "Sample Document 4",
-      description: "Another sample document description.",
-      imageUrl: "https://via.placeholder.com/210",
-      iconUrl: "https://via.placeholder.com/90",
-      document_type: 1 // 1 for notes
-    },
-    {
-      name: "Sample Question Paper 4",
-      description: "Another sample question paper description.",
-      imageUrl: "https://via.placeholder.com/220",
-      iconUrl: "https://via.placeholder.com/100",
-      document_type: 2 // 2 for question paper
-    },
-    {
-      name: "Sample Document 5",
-      description: "some description",
-      imageUrl: "https://via.placeholder.com/230",
-      iconUrl: "https://via.placeholder.com/110",
-      document_type: 1 // 1 for notes
-    },
-    {
-      name: "Sample Question Paper 5",
-      description: "Last sample question paper description.",
-      imageUrl: "https://via.placeholder.com/240",
-      iconUrl: "https://via.placeholder.com/120",
-      document_type: 2 // 2 for question paper
-    },
-    // Add more objects as needed
-  ];
+export const fewFileNav = [
+  {
+    name: "Notes",
+    document_type: 1,
+  },
+  {
+    name: "Question Paper",
+    document_type: 2,
+  },
+];
 
+export const fileData = [
+  {
+    name: "Sample Document 1",
+    description: "This is a sample document description.",
+    imageUrl: "https://via.placeholder.com/150",
+    iconUrl: "https://via.placeholder.com/30",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "Sample Question Paper 1",
+    description: "This is a sample question paper description.",
+    imageUrl: "https://via.placeholder.com/160",
+    iconUrl: "https://via.placeholder.com/40",
+    document_type: 2, // 2 for question paper
+  },
+  {
+    name: "Sample Document 2",
+    description: "This is another sample document description.",
+    imageUrl: "https://via.placeholder.com/170",
+    iconUrl: "https://via.placeholder.com/50",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "Sample Question Paper 2",
+    description: "This is another sample question paper description.",
+    imageUrl: "https://via.placeholder.com/180",
+    iconUrl: "https://via.placeholder.com/60",
+    document_type: 2, // 2 for question paper
+  },
+  {
+    name: "Sample Document 3",
+    description: "Yet another sample document description.",
+    imageUrl: "https://via.placeholder.com/190",
+    iconUrl: "https://via.placeholder.com/70",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "Sample Question Paper 3",
+    description: "Yet another sample question paper description.",
+    imageUrl: "https://via.placeholder.com/200",
+    iconUrl: "https://via.placeholder.com/80",
+    document_type: 2, // 2 for question paper
+  },
+  {
+    name: "Sample Document 4",
+    description: "Another sample document description.",
+    imageUrl: "https://via.placeholder.com/210",
+    iconUrl: "https://via.placeholder.com/90",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "Sample Question Paper 4",
+    description: "Another sample question paper description.",
+    imageUrl: "https://via.placeholder.com/220",
+    iconUrl: "https://via.placeholder.com/100",
+    document_type: 2, // 2 for question paper
+  },
+  {
+    name: "Sample Document 5",
+    description: "some description",
+    imageUrl: "https://via.placeholder.com/230",
+    iconUrl: "https://via.placeholder.com/110",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "Sample Question Paper 5",
+    description: "Last sample question paper description.",
+    imageUrl: "https://via.placeholder.com/240",
+    iconUrl: "https://via.placeholder.com/120",
+    document_type: 2, // 2 for question paper
+  },
+  // Add more objects as needed
+];
 
-  export const contributeSubjectOptions = [
-    {
-      name: "Engineering Mathematics I",
-      subjectCode: "21CS2001"
-    },
-    {
-      name: "Engineering Mathematics II",
-      subjectCode: "21CS2002"
-    },
-    {
-      name: "Analysis & Design of Algorithms",
-      subjectCode: "21CS2007"
-    },
-    {
-      name: "Other",
-      subjectCode: "0000000"
-    }
-  ]
+export const contributeSubjectOptions = [
+  {
+    name: "Engineering Mathematics I",
+    subjectCode: "21CS2001",
+  },
+  {
+    name: "Engineering Mathematics II",
+    subjectCode: "21CS2002",
+  },
+  {
+    name: "Analysis & Design of Algorithms",
+    subjectCode: "21CS2007",
+  },
+  {
+    name: "Other",
+    subjectCode: "0000000",
+  },
+];
 
 export const documents = [
   {
@@ -213,13 +212,25 @@ export const SUBJECT_OPTIONS = [
   { value: "Chemistry", label: "Chemistry" },
   { value: "Engineering Mechanics", label: "Engineering Mechanics" },
   { value: "Engineering Graphics", label: "Engineering Graphics" },
-  { value: "Basics of Electrical Engineering", label: "Basics of Electrical Engineering" },
-  { value: "Basics of Electronics Engineering", label: "Basics of Electronics Engineering" },
+  {
+    value: "Basics of Electrical Engineering",
+    label: "Basics of Electrical Engineering",
+  },
+  {
+    value: "Basics of Electronics Engineering",
+    label: "Basics of Electronics Engineering",
+  },
   { value: "Environmental Studies", label: "Environmental Studies" },
-  { value: "Computer Programming and Utilization", label: "Computer Programming and Utilization" },
+  {
+    value: "Computer Programming and Utilization",
+    label: "Computer Programming and Utilization",
+  },
   { value: "Workshop Practice", label: "Workshop Practice" },
   { value: "Communication Skills", label: "Communication Skills" },
-  { value: "Constitution of India and Professional Ethics", label: "Constitution of India and Professional Ethics" }
+  {
+    value: "Constitution of India and Professional Ethics",
+    label: "Constitution of India and Professional Ethics",
+  },
 ];
 
 export const BRANCH_OPTIONS = [
@@ -227,11 +238,16 @@ export const BRANCH_OPTIONS = [
   { value: "B.Tech. CSE Core", label: "B.Tech. CSE Core" },
   { value: "B.Tech. CSE DSAI", label: "B.Tech. CSE DSAI" },
   { value: "B.Tech. CSE Others", label: "B.Tech. CSE Others" },
-  { value: "B. Computer Application", label: "B. Computer Application" }
+  { value: "B. Computer Application", label: "B. Computer Application" },
 ];
 
 export const DOCUMENT_TYPES = [
   { value: "question_paper", label: "Question Paper" },
-  { value: "notes", label: "Notes" }
+  { value: "notes", label: "Notes" },
 ];
 
+
+export const email_form = {
+  name: "Edudoc",
+  email: "edudoc.zerodev@gmail.com"
+}

@@ -167,6 +167,98 @@ class notesController {
       });
     }
   };
+
+  static increaseLikeCount = async (req, res) => {
+    try {
+      const noteId = req.params.id;
+
+      const note = await NoteModel.findById(noteId);
+
+      if (!note) {
+        return res.status(404).json({
+          status: false,
+          message: "Note not found",
+        });
+      }
+
+      note.likeCount += 1;
+
+      const updatedNote = await note.save();
+
+      res.json({
+        status: true,
+        data: updatedNote,
+        message: "Like count increased successfully",
+      });
+    } catch (error) {
+      res.status(500).json({
+        status: false,
+        message: error.message,
+      });
+    }
+  };
+
+  static increaseViewCount = async (req, res) => {
+    try {
+      const noteId = req.params.id;
+
+      const note = await NoteModel.findById(noteId);
+
+      if (!note) {
+        return res.status(404).json({
+          status: false,
+          message: "Note not found",
+        });
+      }
+
+      note.viewCount += 1;
+
+      const updatedNote = await note.save();
+
+      res.json({
+        status: true,
+        data: updatedNote,
+        message: "View count increased successfully",
+      });
+    } catch (error) {
+      res.status(500).json({
+        status: false,
+        message: error.message,
+      });
+    }
+  };
+
+  static increaseDownloadCount = async (req, res) => {
+    try {
+      const noteId = req.params.id;
+
+      const note = await NoteModel.findById(noteId);
+
+      if (!note) {
+        return res.status(404).json({
+          status: false,
+          message: "Note not found",
+        });
+      }
+
+      note.downloadsCount += 1;
+
+      const updatedNote = await note.save();
+
+      res.json({
+        status: true,
+        data: updatedNote,
+        message: "Download count increased successfully",
+      });
+    } catch (error) {
+      res.status(500).json({
+        status: false,
+        message: error.message,
+      });
+    }
+  };
 }
+
+
 
 export default notesController;

@@ -1,18 +1,24 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Lottie from "lottie-react";
 import contributeanimation from "/public/contribute animation.json";
 import { publishNotesAPI } from "@/apiCalls";
 import { DOCUMENT_TYPES, SUBJECT_OPTIONS, BRANCH_OPTIONS } from "@/constant";
 
+import { useUser } from "@clerk/nextjs";
+import { sendEmail } from "@/services/emailService";
+import {  email_form } from "@/constant.js";
+
 const Page = () => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [document_type, setDocumentType] = useState('');
-  const [subject, setSubject] = useState('');
+  const { isLoaded, isSignedIn, user } = useUser();
+
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [document_type, setDocumentType] = useState("");
+  const [subject, setSubject] = useState("");
   const [author, setAuthor] = useState("Anonymous");
-  const [branch, setBranch] = useState('');
-  const [college, setCollege] = useState('');
+  const [branch, setBranch] = useState("");
+  const [college, setCollege] = useState("");
   const [file, setFile] = useState(null);
 
   const [isUploading, setUploading] = useState(false);
@@ -20,7 +26,7 @@ const Page = () => {
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0])
+    setFile(e.target.files[0]);
   };
 
   const handleSubmit = async (e) => {
@@ -36,7 +42,10 @@ const Page = () => {
       formData.append("document_type", document_type);
       formData.append("subject", subject);
       formData.append("subject_code", "000000");
-      formData.append("author", author);
+      if (user) {
+        formData.append("author", user.emailAddresses);
+      }
+
       formData.append("branch", branch);
       formData.append("college", college);
       formData.append("file", file);
@@ -44,6 +53,40 @@ const Page = () => {
       setUploading(true);
 
       const response = await publishNotesAPI(formData);
+
+//       const email_notesPublish = `
+// Hello ${author},
+
+// You got a new message from ${from_name}:
+
+// ---
+
+// Wait for confirmation if your notes has been published or not.
+
+// ---
+
+// Thank you for your contribution! We've received your document and will shortly moderate and publish it on our platform. We appreciate your valuable input and look forward to sharing it with our community.
+
+// Best wishes,
+// ${from_name} Team
+// `;
+
+//       sendEmail(email_form, author, email_notesPublish)
+//         .then((response) => {
+//           console.log(response);
+//         })
+//         .catch((error) => {
+//           console.error(error); // Handle error
+//         });
+
+      setTitle("");
+      setContent("");
+      setFile("");
+      setCollege("");
+      setAuthor("");
+      setDocumentType("");
+      setSubject("");
+
       setSuccessMessage(response.data.message);
     } catch (error) {
       setErrorMessage("Failed to upload. Please try again.");
@@ -122,8 +165,10 @@ const Page = () => {
                 required
                 className="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:border-blue-500"
               >
-                {SUBJECT_OPTIONS.map(option => (
-                  <option key={option.value} value={option.value}>{option.label}</option>
+                {SUBJECT_OPTIONS.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
                 ))}
               </select>
             </div>
@@ -139,15 +184,17 @@ const Page = () => {
                 required
                 className="mt-1 p-2 w-full border border-gray-300 rounded focus:outline-none focus:border-blue-500"
               >
-                {BRANCH_OPTIONS.map(option => (
-                  <option key={option.value} value={option.value}>{option.label}</option>
+                {BRANCH_OPTIONS.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
                 ))}
               </select>
             </div>
             <div className="mb-4">
               <label className="block text-gray-700">Type:</label>
               <div>
-                {DOCUMENT_TYPES.map(type => (
+                {DOCUMENT_TYPES.map((type) => (
                   <label key={type.value}>
                     <input
                       type="radio"
@@ -192,7 +239,6 @@ const Page = () => {
       </div>
     </div>
   );
-  
-}
+};
 
 export default Page;
