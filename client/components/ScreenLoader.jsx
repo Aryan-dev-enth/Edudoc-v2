@@ -8,7 +8,7 @@ const ScreenLoader = () => {
   let [loading, setLoading] = useState(true);
   let [color, setColor] = useState("black");
   return (
-    <div className="w-screen h-screen flex items-center justify-center  overflow-hidden bg-[#fffff7]">
+    <div className="w-screen h-screen flex flex-col items-center justify-center  overflow-hidden bg-[#fffff7] gap-10">
       <ClipLoader
         color={color}
         loading={loading}

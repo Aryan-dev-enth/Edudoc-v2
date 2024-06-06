@@ -9,18 +9,24 @@ const DocumentItem = ({ data, setUpdated }) => {
   const { author, title, published, file_url, verified, subject, college, document_type } = data;
   const { webContentLink, webViewLink } = file_url;
 
+  const [isLoading, setLoading] = useState(false);
+
   const isAdmin = user?.publicMetadata?.isAdmin;
   const [viewCount, setViewCount] = useState(data.viewCount);
   const [downloadsCount, setDownloadsCount] = useState(data.downloadsCount);
 
   const handleDelete = () => {
+    setLoading(true);
     deleteNote(data._id);
     setUpdated(true);
+    setLoading(false);
   };
 
   const handleVerify = () => {
+    setLoading(true);
     verifyNote(data._id);
     setUpdated(true);
+    setLoading(false);
   };
 
   const handleView = () => {
@@ -42,7 +48,8 @@ const DocumentItem = ({ data, setUpdated }) => {
         <p className="text-gray-500 text-sm md:text-base hidden md:block">Author: {author}</p>
       </div>
 
-      <div className="flex items-center space-x-2 md:space-x-4 mt-2 md:mt-0">
+      {!isLoading?(
+        <div className="flex items-center space-x-2 md:space-x-4 mt-2 md:mt-0">
         <p className="text-gray-500 text-xs md:text-sm hidden md:block">
           Published Date: {new Date(published).toLocaleDateString()}
         </p>
@@ -66,6 +73,9 @@ const DocumentItem = ({ data, setUpdated }) => {
           </>
         )}
       </div>
+      ):(
+        <>Loading...</>
+      ) }
     </div>
   );
 };

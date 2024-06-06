@@ -6,14 +6,13 @@ import { getNotes } from "@/apiCalls";
 import { useUser } from "@clerk/nextjs";
 import ScreenLoader from "@/components/ScreenLoader";
 
-
 const Page = () => {
   const { isLoaded, isSignedIn, user } = useUser();
   const [updated, setUpdated] = useState(false);
   const [verifiedNotes, setVerifiedNotes] = useState(null);
   const [allNotes, setAllNotes] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -22,14 +21,21 @@ const Page = () => {
 
         try {
           if (isAdmin) {
+            setLoading(true);
             const allNotesResponse = await getNotes(true);
             setAllNotes(allNotesResponse.data.data);
 
+           
+            
             const verifiedNotesResponse = await getNotes(false);
             setVerifiedNotes(verifiedNotesResponse.data.data.slice(0, 5));
+            setLoading(false)
           } else {
+            setLoading(true);
+            
             const verifiedNotesResponse = await getNotes(false);
             setVerifiedNotes(verifiedNotesResponse.data.data);
+            setLoading(false);
           }
 
           setUpdated(false);
@@ -55,11 +61,17 @@ const Page = () => {
   };
 
   if (!isSignedIn) {
-    alert("Login to your account to view any document !")
     return (
-      <ScreenLoader />
+      <div className="w-screen h-screen bg-p[#fffff7] flex flex-col justify-center items-center">
+        <h1 className="lg:text-2xl text-md font-light">Be logged in to view all the notes !</h1>
+       
+      </div>
     );
   }
+  if(loading)
+    {
+      return <ScreenLoader/>
+    }
 
   return (
     <div className="w-screen min-h-screen bg-[#fffff7] flex flex-col items-center gap-2 lg:gap-8 sm:gap-16 pt-32 overflow-hidden">
