@@ -64,10 +64,11 @@ const Landing = () => {
           className="sm:w-full w-3/4 max-w-3xl pb-1 px-2 bg-white shadow-md mt-2 rounded-lg"
         >
           {filteredNotes.map((note) => (
-            <a href={note.file_url.webViewLink} target="_blank" onClick={router.push('/all-notes')}>
+            <a href={note.file_url.webViewLink} target="_blank" >
               <div
                 key={note._id}
                 className="w-full sm:my-2 sm:p-4 p-2 border-b cursor-pointer hover:bg-gray-100"
+                onClick={router.push('/all-notes')}
               >
                 <h2 className="sm:text-xl text-sm font-bold">{note.title}</h2>
                 <p className="text-xs text-gray-600">{note.subject}</p>
