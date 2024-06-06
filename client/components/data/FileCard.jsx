@@ -3,7 +3,7 @@ import React from "react";
 const FileCard = (props) => {
   const { name, description, imageUrl, iconUrl } = props.data;
 
-  // Function to truncate text if longer than one word
+  
   const truncateText = (text, maxLength) => {
     if (text.split(" ").length > 1 && text.length > maxLength) {
       return text.slice(0, maxLength) + "...";

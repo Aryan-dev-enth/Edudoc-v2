@@ -22,7 +22,7 @@ export const publishNotesAPI = async (formData) => {
         }
       }
     );
-    console.log(response)
+   
     return response.data;  
   } catch (error) {
     console.error("Error publishing notes:", error);
@@ -66,7 +66,7 @@ export const verifyNote = async (id) => {
 export const increaseLikeCount = async(id) =>{
   try {
     const response = await axios.post(`${BASE_URL}${NOTES_ROUTE}${INCREASE_LIKE_COUNT}/${id}`)
-    console.log(response)
+   
     return response.data;
   } catch (error) {
     throw(error)
@@ -76,7 +76,7 @@ export const increaseLikeCount = async(id) =>{
 export const increaseViewCount = async(id) =>{
   try {
     const response = await axios.post(`${BASE_URL}${NOTES_ROUTE}${INCREASE_VIEW_COUNT}/${id}`)
-    console.log(response)
+    
     return response.data;
   } catch (error) {
     throw(error)
@@ -87,7 +87,7 @@ export const increaseViewCount = async(id) =>{
 export const increaseDownloadCount = async(id) =>{
   try {
     const response = await axios.post(`${BASE_URL}${NOTES_ROUTE}${INCREASE_DOWNLOAD_COUNT}/${id}`)
-    console.log(response)
+    
     return response.data;
   } catch (error) {
     throw(error)

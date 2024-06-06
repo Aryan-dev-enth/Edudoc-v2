@@ -206,7 +206,6 @@ export const documents = [
 
 // constants.js
 export const SUBJECT_OPTIONS = [
-  { value: "", label: "Select Subject" },
   { value: "Mathematics", label: "Mathematics" },
   { value: "Physics", label: "Physics" },
   { value: "Chemistry", label: "Chemistry" },
@@ -231,7 +230,27 @@ export const SUBJECT_OPTIONS = [
     value: "Constitution of India and Professional Ethics",
     label: "Constitution of India and Professional Ethics",
   },
+  { value: "Data Structures", label: "Data Structures" },
+  { value: "Algorithms", label: "Algorithms" },
+  { value: "Database Management Systems", label: "Database Management Systems" },
+  { value: "Operating Systems", label: "Operating Systems" },
+  { value: "Computer Networks", label: "Computer Networks" },
+  { value: "Software Engineering", label: "Software Engineering" },
+  { value: "Theory of Computation", label: "Theory of Computation" },
+  { value: "Compiler Design", label: "Compiler Design" },
+  { value: "Artificial Intelligence", label: "Artificial Intelligence" },
+  { value: "Machine Learning", label: "Machine Learning" },
+  { value: "Data Science", label: "Data Science" },
+  { value: "Web Development", label: "Web Development" },
+  { value: "Mobile Application Development", label: "Mobile Application Development" },
+  { value: "Cyber Security", label: "Cyber Security" },
+  { value: "Cloud Computing", label: "Cloud Computing" },
+  { value: "Internet of Things", label: "Internet of Things" },
+  { value: "Big Data Analytics", label: "Big Data Analytics" },
+  { value: "Human-Computer Interaction", label: "Human-Computer Interaction" },
+  { value: "Otther", label: "Other"}
 ];
+
 
 export const BRANCH_OPTIONS = [
   { value: "", label: "Select Branch" },

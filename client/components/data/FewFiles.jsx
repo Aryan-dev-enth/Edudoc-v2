@@ -4,19 +4,17 @@ import { fewFileNav, fileData } from "@/constant";
 import FileCard from "./FileCard";
 
 const FewFiles = () => {
-  const [activeNavLink, setActiveNavLink] = useState(0); // Initialize to the index of "Notes"
+  const [activeNavLink, setActiveNavLink] = useState(0); 
   const [filteredFiles, setFilteredFiles] = useState([]);
 
   useEffect(() => {
-    // Filter files based on the default selected navigation item ("Notes")
     const defaultNav = fewFileNav[activeNavLink];
     const filtered = fileData.filter(file => file.document_type === defaultNav.document_type);
     setFilteredFiles(filtered);
-  }, []); // Run only on initial render
+  }, []); 
 
   const handleNavClick = (index, documentType) => {
     setActiveNavLink(index);
-    // Filter files based on the clicked navigation item
     const filtered = fileData.filter(file => file.document_type === documentType);
     setFilteredFiles(filtered);
   };

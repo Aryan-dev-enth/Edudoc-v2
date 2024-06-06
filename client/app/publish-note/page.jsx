@@ -6,11 +6,10 @@ import { publishNotesAPI } from "@/apiCalls";
 import { DOCUMENT_TYPES, SUBJECT_OPTIONS, BRANCH_OPTIONS } from "@/constant";
 
 import { useUser } from "@clerk/nextjs";
-import { sendEmail } from "@/services/emailService";
-import {  email_form } from "@/constant.js";
 
 const Page = () => {
   const { isLoaded, isSignedIn, user } = useUser();
+  
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -43,7 +42,7 @@ const Page = () => {
       formData.append("subject", subject);
       formData.append("subject_code", "000000");
       if (user) {
-        formData.append("author", user.emailAddresses);
+        formData.append("author", user.fullName);
       }
 
       formData.append("branch", branch);
@@ -51,33 +50,11 @@ const Page = () => {
       formData.append("file", file);
 
       setUploading(true);
+      setFile(null)
 
       const response = await publishNotesAPI(formData);
 
-//       const email_notesPublish = `
-// Hello ${author},
 
-// You got a new message from ${from_name}:
-
-// ---
-
-// Wait for confirmation if your notes has been published or not.
-
-// ---
-
-// Thank you for your contribution! We've received your document and will shortly moderate and publish it on our platform. We appreciate your valuable input and look forward to sharing it with our community.
-
-// Best wishes,
-// ${from_name} Team
-// `;
-
-//       sendEmail(email_form, author, email_notesPublish)
-//         .then((response) => {
-//           console.log(response);
-//         })
-//         .catch((error) => {
-//           console.error(error); // Handle error
-//         });
 
       setTitle("");
       setContent("");
@@ -160,6 +137,7 @@ const Page = () => {
               <select
                 id="subject"
                 name="subject"
+                
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 required
