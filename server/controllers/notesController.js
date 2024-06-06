@@ -65,7 +65,7 @@ class notesController {
         const savedNote = await newNote.save();
         console.log("db works fine")
 
-        fs.unlinkSync(fileUrl);
+        // fs.unlinkSync(fileUrl);
 
         successHandler(res, savedNote, "Note created succesfully");
       } catch (error) {
