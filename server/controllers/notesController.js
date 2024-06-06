@@ -31,6 +31,7 @@ class notesController {
      
 
       const fileUrl = req.file.path;
+      console.log(fileUrl)
       if (!title || !content || !fileUrl) {
         errorHandler(res, {
           message: "All fields required",
@@ -39,6 +40,7 @@ class notesController {
       }
 
       const googleDriveResponse = await uploadToGoogleDrive(fileUrl);
+      console.log("drive is fine")
 
       if (!googleDriveResponse) {
         errorHandler(res, {
@@ -61,6 +63,7 @@ class notesController {
       });
       try {
         const savedNote = await newNote.save();
+        console.log("db works fine")
 
         fs.unlinkSync(fileUrl);
 
