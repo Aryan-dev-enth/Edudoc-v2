@@ -54,6 +54,7 @@ const Landing = () => {
         <h4 className="text-base md:text-2xl text-white text-center">
           Your Gateway to Knowledge
         </h4>
+        <h4 className="text-sm lg:text-xl text-gray-500 text-center font-light">.. Still under development ..</h4>
         <div className="w-full flex items-center justify-center px-4">
           <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         </div>
