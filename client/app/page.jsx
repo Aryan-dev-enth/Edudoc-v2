@@ -10,7 +10,7 @@ export default function Home() {
       <Navbar />
       <Landing />
       <DataSection />
-      <FewFiles />
+      {/* <FewFiles /> */}
       <Footer />
     </div>
   );
