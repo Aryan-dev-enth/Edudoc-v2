@@ -55,6 +55,7 @@ const Page = () => {
   };
 
   if (!isSignedIn) {
+    alert("Login to your account to view any document !")
     return (
       <ScreenLoader />
     );
