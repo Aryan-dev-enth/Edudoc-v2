@@ -46,10 +46,31 @@ export const fewFileNav = [
 
 export const fileData = [
   {
-    name: "Sample Document 1",
-    description: "This is a sample document description.",
-    imageUrl: "https://via.placeholder.com/150",
+    name: "Analysis & Design of Algorithm - Handwritten notes",
+    description: "All five units covered hand written.",
+    imageUrl: "https://drive.google.com/file/d/139O5Hk3y4hyYMSEw_LeQV_ms_M8twAw0/view",
     iconUrl: "https://via.placeholder.com/30",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "Finite Automata & Context Free Grammar",
+    description: "Theory of Computation hand written notes part 1",
+    imageUrl: "https://drive.google.com/file/d/1TeXicNzkaNyY9ZOqERJC6hluIpwXHvAC/view",
+    iconUrl: "https://via.placeholder.com/40",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "Context free grammar up till Turing Machine",
+    description: "Hand written notes of Theory of computation (TOC)",
+    imageUrl: "https://drive.google.com/uc?id=139O5Hk3y4hyYMSEw_LeQV_ms_M8twAw0&export=download",
+    iconUrl: "https://via.placeholder.com/50",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "Operating System complete Notes",
+    description: "Process Scheduling, CPU scheduling, memory management and more.",
+    imageUrl: "https://drive.google.com/uc?id=1TeXicNzkaNyY9ZOqERJC6hluIpwXHvAC&export=download",
+    iconUrl: "https://via.placeholder.com/60",
     document_type: 1, // 1 for notes
   },
   {
@@ -60,13 +81,6 @@ export const fileData = [
     document_type: 2, // 2 for question paper
   },
   {
-    name: "Sample Document 2",
-    description: "This is another sample document description.",
-    imageUrl: "https://via.placeholder.com/170",
-    iconUrl: "https://via.placeholder.com/50",
-    document_type: 1, // 1 for notes
-  },
-  {
     name: "Sample Question Paper 2",
     description: "This is another sample question paper description.",
     imageUrl: "https://via.placeholder.com/180",
@@ -74,25 +88,11 @@ export const fileData = [
     document_type: 2, // 2 for question paper
   },
   {
-    name: "Sample Document 3",
-    description: "Yet another sample document description.",
-    imageUrl: "https://via.placeholder.com/190",
-    iconUrl: "https://via.placeholder.com/70",
-    document_type: 1, // 1 for notes
-  },
-  {
     name: "Sample Question Paper 3",
     description: "Yet another sample question paper description.",
     imageUrl: "https://via.placeholder.com/200",
     iconUrl: "https://via.placeholder.com/80",
     document_type: 2, // 2 for question paper
-  },
-  {
-    name: "Sample Document 4",
-    description: "Another sample document description.",
-    imageUrl: "https://via.placeholder.com/210",
-    iconUrl: "https://via.placeholder.com/90",
-    document_type: 1, // 1 for notes
   },
   {
     name: "Sample Question Paper 4",
@@ -115,8 +115,9 @@ export const fileData = [
     iconUrl: "https://via.placeholder.com/120",
     document_type: 2, // 2 for question paper
   },
-  // Add more objects as needed
 ];
+
+
 
 export const contributeSubjectOptions = [
   {

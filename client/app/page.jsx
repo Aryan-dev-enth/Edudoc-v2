@@ -6,11 +6,11 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="w-screen relative">
+    <div className="w-screen relative ">
       <Navbar />
       <Landing />
       <DataSection />
-      {/* <FewFiles /> */}
+      <FewFiles />
       <Footer />
     </div>
   );
