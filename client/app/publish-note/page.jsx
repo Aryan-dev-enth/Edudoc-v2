@@ -64,7 +64,8 @@ const Page = () => {
       setDocumentType("");
       setSubject("");
 
-      setSuccessMessage(response.data.message);
+      setSuccessMessage(response.message);
+      alert(response.message +"\nRefresh the tab for if any error is faced!");
     } catch (error) {
       setErrorMessage("Failed to upload. Please try again.");
     }
@@ -208,10 +209,10 @@ const Page = () => {
             </button>
           </form>
           {errorMessage && (
-            <div className="text-red-600 mt-4">{errorMessage}</div>
+            <div className="text-red-600 my-4">{errorMessage}</div>
           )}
           {successMessage && (
-            <div className="text-green-600 mt-4">{successMessage}</div>
+            <div className="text-green-600 my-4">{successMessage}</div>
           )}
         </div>
       </div>

@@ -14,7 +14,7 @@ class notesController {
   }
 
   static publishNotes = async (req, res) => {
-    console.log("Request Reached here")
+    
     try {
       const {
         title,
@@ -66,11 +66,11 @@ class notesController {
 
         successHandler(res, savedNote, "Note created succesfully");
       } catch (error) {
-        console.log(error.message)
+        
         errorHandler(res, error);
       }
     } catch (error) {
-      console.log(error.message)
+      
       errorHandler(res, error);
     }
   };
@@ -82,7 +82,7 @@ class notesController {
       const note = await NoteModel.findByIdAndDelete(noteId);
       
       const response = await deleteFromGoogleDrive(note.gapis_file_id);
-      console.log(response)
+     
 
       if (!note) {
         return res.status(404).json({
