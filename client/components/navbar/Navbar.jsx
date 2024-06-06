@@ -65,9 +65,10 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button className="px-8 py-2 rounded-full bg-green-400 text-white font-semibold hover:bg-green-500 transition duration-300 mb-4">
-          Logout
-        </button>
+        <SignedOut>
+          <SignInButton className="px-8 py-2 rounded-full bg-green-400 text-white font-semibold hover:bg-green-500 transition duration-300"/>
+        </SignedOut>
+        
       </div>
     </div>
   );
