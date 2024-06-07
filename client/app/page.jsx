@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -23,7 +23,7 @@ export default function Home() {
   }
 
   return (
-    <div className="w-screen relative before:opacity-0 after:opacity-100 transition-opacity">
+    <div className="w-screen relative transition-opacity overflow-x-hidden ">
       <Navbar />
       <Landing />
       <DataSection />

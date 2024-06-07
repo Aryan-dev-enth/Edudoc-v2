@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Search from "../Search";
 import { getNotes } from "@/apiCalls";
 import { useRouter } from "next/navigation";
-
+import { BarLoader } from "react-spinners";
 const Landing = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [notesData, setNotesData] = useState([]);
@@ -54,7 +54,9 @@ const Landing = () => {
         <h4 className="text-base md:text-2xl text-white text-center">
           Your Gateway to Knowledge
         </h4>
-        <h4 className="text-sm lg:text-xl text-gray-500 text-center font-light">.. Still under development ..</h4>
+        
+        <h4 className="text-md lg:text-2xl text-yellow-300 text-center font-light animate-bounce">.. Still under development ..</h4>
+      
         <div className="w-full flex items-center justify-center px-4">
           <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         </div>
