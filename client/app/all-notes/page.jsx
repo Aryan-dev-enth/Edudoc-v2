@@ -77,7 +77,6 @@ const Page = () => {
   
 
   const handleSortChange = (e) => {
-    console.log(e.target.value)
     setSortCriteria(e.target.value);
   };
 
@@ -168,12 +167,6 @@ const Page = () => {
           onChange={handleSortChange}
           className="p-2 border border-gray-300 rounded "
         >
-          {sortedVerifiedNotes.map((value, index)=>{
-            console.log(value.title)
-            return (
-              <div id={index}>{value.title}</div>
-            )
-          })}
           <option value="latest">Latest</option>
           <option value="alphabetical">Alphabetical</option>
           <option value="trending">Trending</option>
