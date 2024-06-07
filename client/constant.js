@@ -47,14 +47,14 @@ export const fewFileNav = [
 export const fileData = [
   {
     name: "Analysis & Design of Algorithm - Handwritten notes",
-    description: "All five units covered hand written.",
+    description: "All five units covered, handwritten.",
     imageUrl: "https://drive.google.com/file/d/17X6sMa08TbVHrXCExNrqiB7ZpdWUjitT/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/30",
     document_type: 1, // 1 for notes
   },
   {
     name: "Context free grammar up till Turing Machine",
-    description: "Hand written notes of Theory of computation (TOC)",
+    description: "Handwritten notes of Theory of Computation (TOC).",
     imageUrl: "https://drive.google.com/file/d/139O5Hk3y4hyYMSEw_LeQV_ms_M8twAw0/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/50",
     document_type: 1, // 1 for notes
@@ -68,10 +68,59 @@ export const fileData = [
   },
   {
     name: "Semester 4all PYQ",
-    description: "Previous Year question paper of mst, and final exam.",
+    description: "Previous Year question paper of MST and final exam.",
     imageUrl: "https://drive.google.com/file/d/1RlgAA0IdG0pMAuESIXZ612q27HXCMoc8/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/160",
     document_type: 2, // 2 for question paper
+  },
+  {
+    name: "Finite Automata Complete Handwritten notes",
+    description: "Complete handwritten notes by a 2nd-year student.",
+    imageUrl: "https://drive.google.com/file/d/1YSp7z2J1oq0c2_e3Hd3U8-5NtXuj6ooS/view?usp=drivesdk",
+    iconUrl: "https://via.placeholder.com/40",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "ADM Unit 1 - IBM DT Framework",
+    description: "Agile Development Methodology PPT.",
+    imageUrl: "https://drive.google.com/file/d/1jfPxwBbS1H5j8C5Q64YHuWShhbHD5WbG/view?usp=drivesdk",
+    iconUrl: "https://via.placeholder.com/45",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "ADM Unit 2 - complete ppt",
+    description: "Waterfall model, V model, agile model.",
+    imageUrl: "https://drive.google.com/file/d/16R0TRrbKuOVTnWMRZSxbu8Hz-SMNbolW/view?usp=drivesdk",
+    iconUrl: "https://via.placeholder.com/45",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "PYQ complete 2022",
+    description: "Previous year questions containing all subjects from the year 2022.",
+    imageUrl: "https://drive.google.com/file/d/1H53NfkMuJwcABtGjeDe1jQARelL8cXbJ/view?usp=drivesdk",
+    iconUrl: "https://via.placeholder.com/45",
+    document_type: 2, // 2 for question paper
+  },
+  {
+    name: "Scrum complete notes- Unit 3",
+    description: "Agile development methodology, ADM unit 3.",
+    imageUrl: "https://drive.google.com/file/d/11kzp7TR9WmIOUJ-gk0rfSMQrWfBgwsGk/view?usp=drivesdk",
+    iconUrl: "https://via.placeholder.com/45",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "Scrum ADM Unit 4 (Deep Dive)",
+    description: "Agile development methodology, unit 4 complete.",
+    imageUrl: "https://drive.google.com/file/d/1bK3i_A745t1LjMOUD90UJTt6_sCQKbWl/view?usp=drivesdk",
+    iconUrl: "https://via.placeholder.com/45",
+    document_type: 1, // 1 for notes
+  },
+  {
+    name: "Engineering Mathematic - III Complete notes",
+    description: "Semester 3 notes, Maths M3.",
+    imageUrl: "https://drive.google.com/file/d/117m2zABHoEjCzah5BlK7DIMUrbD61Tet/view?usp=drivesdk",
+    iconUrl: "https://via.placeholder.com/45",
+    document_type: 1, // 1 for notes
   }
 ];
 
