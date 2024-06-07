@@ -20,7 +20,7 @@ const FewFiles = () => {
   };
 
   return (
-    <div className="mt-6 py-16 lg:mt-20 px-4 lg:px-0 w-screen min-h-[80vh] flex flex-col justify-center items-center bg-[#f6f7fb] gap-8">
+    <div className="mt-6 py-16 lg:mt-20 px-4 lg:px-0 w-full min-h-[80vh] flex flex-col justify-center items-center bg-[#f6f7fb] gap-8">
       <h1 className="mt-16 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 text-center">
         Acing Education!
       </h1>

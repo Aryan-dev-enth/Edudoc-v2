@@ -42,7 +42,7 @@ const Landing = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#2a0316] overflow-x-hidden" >
-      <div className="w-full h-auto md:h-[60vh] flex flex-col items-center justify-center gap-6 px-4 bg-[#2a0316]">
+      <div className="w-full h-auto md:h-[60vh] flex flex-col items-center justify-center gap-6 px-4 bg-[#2a0316] ">
         <img
           src="landing.png"
           alt=""
