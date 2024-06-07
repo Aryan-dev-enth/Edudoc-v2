@@ -79,12 +79,12 @@ const Page = () => {
 
   return (
     <div className="container mx-auto px-4 bg-[#fffff7]">
-      <div className="flex flex-col lg:flex-row items-center gap-5 md:min-h-screen p-5">
+      <div className="flex lg:flex-row items-center justify-center gap-5 md:min-h-screen p-5">
         <div className="lg:w-1/2 h-full flex justify-center md:justify-start items-center pt-28">
           <Lottie
             animationData={contributeanimation}
             loop={true}
-            className="w-[100%] h-auto hidden sm:block"
+            className="w-[100%] h-auto hidden lg:block"
           />
         </div>
         <div className="lg:w-1/2 h-full flex flex-col justify-center items-center pt-20">
