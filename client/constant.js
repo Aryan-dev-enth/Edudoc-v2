@@ -54,14 +54,6 @@ export const fileData = [
     document_type: 1, // 1 for notes
   },
   {
-    name: "Context free grammar up till Turing Machine",
-    description: "Handwritten notes of Theory of Computation (TOC).",
-    imageUrl:
-      "https://drive.google.com/file/d/139O5Hk3y4hyYMSEw_LeQV_ms_M8twAw0/view?usp=drivesdk",
-    iconUrl: "https://via.placeholder.com/50",
-    document_type: 1, // 1 for notes
-  },
-  {
     name: "Operating System complete Notes",
     description:
       "Process Scheduling, CPU scheduling, memory management and more.",
@@ -87,14 +79,6 @@ export const fileData = [
     document_type: 1, // 1 for notes
   },
   {
-    name: "ADM Unit 1 - IBM DT Framework",
-    description: "Agile Development Methodology PPT.",
-    imageUrl:
-      "https://drive.google.com/file/d/1jfPxwBbS1H5j8C5Q64YHuWShhbHD5WbG/view?usp=drivesdk",
-    iconUrl: "https://via.placeholder.com/45",
-    document_type: 1, // 1 for notes
-  },
-  {
     name: "PYQ complete 2022",
     description:
       "Previous year questions containing all subjects from the year 2022.",
@@ -102,14 +86,6 @@ export const fileData = [
       "https://drive.google.com/file/d/1H53NfkMuJwcABtGjeDe1jQARelL8cXbJ/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/45",
     document_type: 2, // 2 for question paper
-  },
-  {
-    name: "Scrum complete notes- Unit 3",
-    description: "Agile development methodology, ADM unit 3.",
-    imageUrl:
-      "https://drive.google.com/file/d/11kzp7TR9WmIOUJ-gk0rfSMQrWfBgwsGk/view?usp=drivesdk",
-    iconUrl: "https://via.placeholder.com/45",
-    document_type: 1, // 1 for notes
   },
   {
     name: "Engineering Mathematics - III Complete notes",
@@ -121,91 +97,7 @@ export const fileData = [
   },
 ];
 
-export const contributeSubjectOptions = [
-  {
-    name: "Engineering Mathematics I",
-    subjectCode: "21CS2001",
-  },
-  {
-    name: "Engineering Mathematics II",
-    subjectCode: "21CS2002",
-  },
-  {
-    name: "Analysis & Design of Algorithms",
-    subjectCode: "21CS2007",
-  },
-  {
-    name: "Other",
-    subjectCode: "0000000",
-  },
-];
 
-export const documents = [
-  {
-    documentName: "Sample Document",
-    authorName: "John Doe",
-    publishedDate: "2024-05-19",
-    viewUrl: "https://example.com/sample_document",
-    downloadUrl: "https://example.com/download/sample_document",
-    subject: "Science",
-  },
-  {
-    documentName: "Another Document",
-    authorName: "Jane Smith",
-    publishedDate: "2024-05-20",
-    viewUrl: "https://example.com/another_document",
-    downloadUrl: "https://example.com/download/another_document",
-    subject: "History",
-  },
-  {
-    documentName: "Research Paper",
-    authorName: "Alice Johnson",
-    publishedDate: "2024-05-21",
-    viewUrl: "https://example.com/research_paper",
-    downloadUrl: "https://example.com/download/research_paper",
-    subject: "Literature",
-  },
-  {
-    documentName: "Case Study",
-    authorName: "Michael Brown",
-    publishedDate: "2024-05-22",
-    viewUrl: "https://example.com/case_study",
-    downloadUrl: "https://example.com/download/case_study",
-    subject: "Business",
-  },
-  {
-    documentName: "Essay",
-    authorName: "Emily Wilson",
-    publishedDate: "2024-05-23",
-    viewUrl: "https://example.com/essay",
-    downloadUrl: "https://example.com/download/essay",
-    subject: "English",
-  },
-  {
-    documentName: "Presentation Slides",
-    authorName: "David Lee",
-    publishedDate: "2024-05-24",
-    viewUrl: "https://example.com/presentation_slides",
-    downloadUrl: "https://example.com/download/presentation_slides",
-    subject: "Computer Science",
-  },
-  {
-    documentName: "Tutorial",
-    authorName: "Sarah Adams",
-    publishedDate: "2024-05-25",
-    viewUrl: "https://example.com/tutorial",
-    downloadUrl: "https://example.com/download/tutorial",
-    subject: "Mathematics",
-  },
-  {
-    documentName: "Guidebook",
-    authorName: "Robert Clark",
-    publishedDate: "2024-05-26",
-    viewUrl: "https://example.com/guidebook",
-    downloadUrl: "https://example.com/download/guidebook",
-    subject: "Geography",
-  },
-];
 
 export const SUBJECT_OPTIONS = [
   { value: "Mathematics", label: "Mathematics" },
