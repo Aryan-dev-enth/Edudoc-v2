@@ -48,74 +48,33 @@ export const fileData = [
   {
     name: "Analysis & Design of Algorithm - Handwritten notes",
     description: "All five units covered hand written.",
-    imageUrl: "https://drive.google.com/file/d/139O5Hk3y4hyYMSEw_LeQV_ms_M8twAw0/view",
+    imageUrl: "https://drive.google.com/file/d/17X6sMa08TbVHrXCExNrqiB7ZpdWUjitT/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/30",
-    document_type: 1, // 1 for notes
-  },
-  {
-    name: "Finite Automata & Context Free Grammar",
-    description: "Theory of Computation hand written notes part 1",
-    imageUrl: "https://drive.google.com/file/d/1TeXicNzkaNyY9ZOqERJC6hluIpwXHvAC/view",
-    iconUrl: "https://via.placeholder.com/40",
     document_type: 1, // 1 for notes
   },
   {
     name: "Context free grammar up till Turing Machine",
     description: "Hand written notes of Theory of computation (TOC)",
-    imageUrl: "https://drive.google.com/uc?id=139O5Hk3y4hyYMSEw_LeQV_ms_M8twAw0&export=download",
+    imageUrl: "https://drive.google.com/file/d/139O5Hk3y4hyYMSEw_LeQV_ms_M8twAw0/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/50",
     document_type: 1, // 1 for notes
   },
   {
     name: "Operating System complete Notes",
     description: "Process Scheduling, CPU scheduling, memory management and more.",
-    imageUrl: "https://drive.google.com/uc?id=1TeXicNzkaNyY9ZOqERJC6hluIpwXHvAC&export=download",
+    imageUrl: "https://drive.google.com/file/d/1TeXicNzkaNyY9ZOqERJC6hluIpwXHvAC/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/60",
     document_type: 1, // 1 for notes
   },
   {
-    name: "Sample Question Paper 1",
-    description: "This is a sample question paper description.",
-    imageUrl: "https://via.placeholder.com/160",
-    iconUrl: "https://via.placeholder.com/40",
+    name: "Semester 4all PYQ",
+    description: "Previous Year question paper of mst, and final exam.",
+    imageUrl: "https://drive.google.com/file/d/1RlgAA0IdG0pMAuESIXZ612q27HXCMoc8/view?usp=drivesdk",
+    iconUrl: "https://via.placeholder.com/160",
     document_type: 2, // 2 for question paper
-  },
-  {
-    name: "Sample Question Paper 2",
-    description: "This is another sample question paper description.",
-    imageUrl: "https://via.placeholder.com/180",
-    iconUrl: "https://via.placeholder.com/60",
-    document_type: 2, // 2 for question paper
-  },
-  {
-    name: "Sample Question Paper 3",
-    description: "Yet another sample question paper description.",
-    imageUrl: "https://via.placeholder.com/200",
-    iconUrl: "https://via.placeholder.com/80",
-    document_type: 2, // 2 for question paper
-  },
-  {
-    name: "Sample Question Paper 4",
-    description: "Another sample question paper description.",
-    imageUrl: "https://via.placeholder.com/220",
-    iconUrl: "https://via.placeholder.com/100",
-    document_type: 2, // 2 for question paper
-  },
-  {
-    name: "Sample Document 5",
-    description: "some description",
-    imageUrl: "https://via.placeholder.com/230",
-    iconUrl: "https://via.placeholder.com/110",
-    document_type: 1, // 1 for notes
-  },
-  {
-    name: "Sample Question Paper 5",
-    description: "Last sample question paper description.",
-    imageUrl: "https://via.placeholder.com/240",
-    iconUrl: "https://via.placeholder.com/120",
-    document_type: 2, // 2 for question paper
-  },
+  }
 ];
+
 
 
 

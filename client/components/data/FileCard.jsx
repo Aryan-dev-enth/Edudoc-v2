@@ -14,7 +14,7 @@ const FileCard = (props) => {
   return (
     <div className="w-full m-2 lg:w-[250px] h-[100px] rounded-lg px-4 py-2 shadow-lg hover:bg-blue-100 flex justify-between items-center cursor-pointer">
       <div className="left w-[60px] h-[60px] flex justify-center items-center">
-        <a href={imageUrl}><img src="edudoc.jpg" alt="" className="w-full h-full rounded-lg" /></a>
+        <a href={imageUrl} target="_blank"><img src="edudoc.jpg" alt="" className="w-full h-full rounded-lg" /></a>
       </div>
       <div className="right flex flex-col justify-center flex-grow ml-4">
         <h1 className="text-blue-400 font-semibold overflow-hidden overflow-ellipsis whitespace-nowrap">
