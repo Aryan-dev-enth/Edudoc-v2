@@ -62,7 +62,7 @@ const Page = () => {
 
   if (!isSignedIn) {
     return (
-      <div className="w-screen h-screen bg-p[#fffff7] flex flex-col justify-center items-center">
+      <div className="w-screen h-screen bg-p[#fffff7] flex flex-col justify-center items-center ">
         <h1 className="lg:text-2xl text-md font-light">Be logged in to view all the notes !</h1>
        
       </div>
@@ -74,7 +74,7 @@ const Page = () => {
     }
 
   return (
-    <div className="w-screen min-h-screen bg-[#fffff7] flex flex-col items-center gap-2 lg:gap-8 sm:gap-16 pt-32 overflow-hidden">
+    <div className="w-screen min-h-screen bg-[#fffff7] flex flex-col items-center gap-2 lg:gap-8 sm:gap-16 pt-32 overflow-hidden px-4">
       <h1 className="text-4xl md:text-6xl font-bold text-black text-center">
         Last moment?
       </h1>

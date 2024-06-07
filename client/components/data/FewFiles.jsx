@@ -52,7 +52,7 @@ const FewFiles = () => {
             />
           ))}
         </div>
-        <a href="/all-notes" className="mt-4 mb-16 px-4 py-2  bg-blue-600 text-white bg-[#] text-center rounded-3xl hover:scale-105 transition-transform">View more</a>
+        <a href="/all-notes" target="_blank" className="mt-4 mb-16 px-4 py-2  bg-blue-600 text-white bg-[#] text-center rounded-3xl hover:scale-105 transition-transform">View more</a>
       </div>
      
       
