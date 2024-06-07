@@ -9,7 +9,7 @@ const DocumentContainer = ({ data, setUpdated }) => {
   );
 
   const [currentPage, setCurrentPage] = useState(1);
-  const documentsPerPage = 8;
+  const documentsPerPage = 5;
 
   const indexOfLastDocument = currentPage * documentsPerPage;
   const indexOfFirstDocument = indexOfLastDocument - documentsPerPage;

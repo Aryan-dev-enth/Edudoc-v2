@@ -28,7 +28,7 @@ const Page = () => {
            
             
             const verifiedNotesResponse = await getNotes(false);
-            setVerifiedNotes(verifiedNotesResponse.data.data.slice(0, 5));
+            setVerifiedNotes(verifiedNotesResponse.data.data);
             setLoading(false)
           } else {
             setLoading(true);
