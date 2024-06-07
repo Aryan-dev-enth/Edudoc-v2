@@ -8,9 +8,11 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 import { isLoaded, isSignedIn, useUser } from "@clerk/nextjs";
 import ScreenLoader from "@/components/ScreenLoader";
+import { sendEmail } from "@/services/emailService";
 
 const Page = () => {
   const { isLoaded, isSignedIn, user } = useUser();
+  
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -43,7 +45,7 @@ const Page = () => {
       formData.append("subject", subject);
       formData.append("subject_code", "000000");
       if (user) {
-        formData.append("author", user.fullName);
+        formData.append("author", user.emailAddresses[0].emailAddress);
       }
 
       formData.append("branch", branch);
@@ -54,6 +56,13 @@ const Page = () => {
       setFile(null);
 
       const response = await publishNotesAPI(formData);
+
+      const messageContent = `Title: ${title}\nContent: ${content}\nCollege: ${college}\nSubject: ${subject}\nBranch: ${branch}`;
+      await sendEmail(
+        { name: "Edudoc", email: "edudoc.community@gmail.com" },
+        user.emailAddresses[0].emailAddress,
+        messageContent
+      );
 
       setTitle("");
       setContent("");

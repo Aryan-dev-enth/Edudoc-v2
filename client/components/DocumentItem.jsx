@@ -2,7 +2,6 @@
 import {
   deleteNote,
   verifyNote,
-  increaseLikeCount,
   increaseViewCount,
   increaseDownloadCount,
 } from "@/apiCalls";
@@ -14,6 +13,7 @@ import {
   AiOutlineDelete,
   AiOutlineCheckCircle,
 } from "react-icons/ai";
+import { sendEmail } from "@/services/emailService"; // Make sure this path is correct
 
 const DocumentItem = ({ data, setUpdated }) => {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -37,17 +37,59 @@ const DocumentItem = ({ data, setUpdated }) => {
   const [updatedViewCount, setViewCount] = useState(data.viewCount);
   const [updatedDownloadsCount, setDownloadsCount] = useState(data.downloadsCount);
 
-  const handleDelete = () => {
+  const deleteEmailMessage = (title) => `
+    Hello,
+
+    We regret to inform you that your document titled "${title}" has been removed from our platform. This action was necessary due to our review policies and guidelines, which are in place to ensure the highest quality and relevance of content for our community.
+
+    If you have any questions or need further information, please do not hesitate to contact us at edudoc.community@gmail.com
+
+    Thank you for your understanding and cooperation.
+
+    Best regards,
+    Edudoc Team
+  `;
+
+  const verifyEmailMessage = (title) => `
+    Hello,
+
+    Congratulations! Your document titled "${title}" has been successfully verified and is now available on our platform. We appreciate your valuable contribution and are confident that it will be a great resource for our community.
+
+    Thank you for your dedication and effort in sharing your knowledge.
+
+    Best wishes,
+    Edudoc Team
+  `;
+
+  const handleDelete = async () => {
     setLoading(true);
-    deleteNote(data._id);
-    setUpdated(true);
+    try {
+      await deleteNote(data._id);
+      await sendEmail(
+        { name: "Edudoc", email: "no-reply@edudoc.com" },
+        author,
+        deleteEmailMessage(title)
+      );
+      setUpdated(true);
+    } catch (error) {
+      console.error("Error deleting note:", error);
+    }
     setLoading(false);
   };
 
-  const handleVerify = () => {
+  const handleVerify = async () => {
     setLoading(true);
-    verifyNote(data._id);
-    setUpdated(true);
+    try {
+      await verifyNote(data._id);
+      await sendEmail(
+        { name: "Edudoc", email: "no-reply@edudoc.com" },
+        author,
+        verifyEmailMessage(title)
+      );
+      setUpdated(true);
+    } catch (error) {
+      console.error("Error verifying note:", error);
+    }
     setLoading(false);
   };
 
@@ -70,7 +112,7 @@ const DocumentItem = ({ data, setUpdated }) => {
           {title}
         </p>
         <p className="text-gray-500 text-sm md:text-base hidden md:block">
-          Author: {author}
+          Author: {author.split("@")[0] || "Anonymous"}
         </p>
       </div>
 
@@ -85,14 +127,14 @@ const DocumentItem = ({ data, setUpdated }) => {
             className="text-blue-500 hover:text-blue-700 flex items-center space-x-1 text-xs md:text-sm transition-colors duration-200"
             onClick={handleView}
           >
-            <AiOutlineEye size={20} /> <span>{viewCount}</span>
+            <AiOutlineEye size={20} /> <span>{updatedViewCount}</span>
           </a>
           <a
             href={webContentLink}
             className="text-blue-500 hover:text-blue-700 flex items-center space-x-1 text-xs md:text-sm transition-colors duration-200"
             onClick={handleDownload}
           >
-            <AiOutlineDownload size={20} /> <span>{downloadsCount}</span>
+            <AiOutlineDownload size={20} /> <span>{updatedDownloadsCount}</span>
           </a>
 
           {isAdmin && (
