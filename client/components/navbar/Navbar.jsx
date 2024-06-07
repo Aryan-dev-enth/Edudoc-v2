@@ -10,7 +10,7 @@ const Navbar = () => {
   const { isLoaded, isSignedIn, user } = useUser();
 
   return (
-    <div className="w-full bg-[#2A0316] h-[100px] bg-none flex justify-between items-center fixed top-0 px-4 lg:px-10" >
+    <div className="w-full bg-[#2A0316] h-[100px] bg-none flex justify-between items-center fixed top-0 px-4 lg:px-10 z-10" >
       <div className="leftNav flex items-center">
         <div className="logo">
           <a href="/">

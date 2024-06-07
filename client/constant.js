@@ -19,7 +19,7 @@ export const dataSection = [
   {
     name: "Views",
     number: "1K",
-    tagLine: "INcreaing day by day",
+    tagLine: "Increaing day by day",
   },
   {
     name: "Institutions",
@@ -48,84 +48,78 @@ export const fileData = [
   {
     name: "Analysis & Design of Algorithm - Handwritten notes",
     description: "All five units covered, handwritten.",
-    imageUrl: "https://drive.google.com/file/d/17X6sMa08TbVHrXCExNrqiB7ZpdWUjitT/view?usp=drivesdk",
+    imageUrl:
+      "https://drive.google.com/file/d/17X6sMa08TbVHrXCExNrqiB7ZpdWUjitT/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/30",
     document_type: 1, // 1 for notes
   },
   {
     name: "Context free grammar up till Turing Machine",
     description: "Handwritten notes of Theory of Computation (TOC).",
-    imageUrl: "https://drive.google.com/file/d/139O5Hk3y4hyYMSEw_LeQV_ms_M8twAw0/view?usp=drivesdk",
+    imageUrl:
+      "https://drive.google.com/file/d/139O5Hk3y4hyYMSEw_LeQV_ms_M8twAw0/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/50",
     document_type: 1, // 1 for notes
   },
   {
     name: "Operating System complete Notes",
-    description: "Process Scheduling, CPU scheduling, memory management and more.",
-    imageUrl: "https://drive.google.com/file/d/1TeXicNzkaNyY9ZOqERJC6hluIpwXHvAC/view?usp=drivesdk",
+    description:
+      "Process Scheduling, CPU scheduling, memory management and more.",
+    imageUrl:
+      "https://drive.google.com/file/d/1TeXicNzkaNyY9ZOqERJC6hluIpwXHvAC/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/60",
     document_type: 1, // 1 for notes
   },
   {
     name: "Semester 4all PYQ",
     description: "Previous Year question paper of MST and final exam.",
-    imageUrl: "https://drive.google.com/file/d/1RlgAA0IdG0pMAuESIXZ612q27HXCMoc8/view?usp=drivesdk",
+    imageUrl:
+      "https://drive.google.com/file/d/1RlgAA0IdG0pMAuESIXZ612q27HXCMoc8/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/160",
     document_type: 2, // 2 for question paper
   },
   {
     name: "Finite Automata Complete Handwritten notes",
     description: "Complete handwritten notes by a 2nd-year student.",
-    imageUrl: "https://drive.google.com/file/d/1YSp7z2J1oq0c2_e3Hd3U8-5NtXuj6ooS/view?usp=drivesdk",
+    imageUrl:
+      "https://drive.google.com/file/d/1YSp7z2J1oq0c2_e3Hd3U8-5NtXuj6ooS/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/40",
     document_type: 1, // 1 for notes
   },
   {
     name: "ADM Unit 1 - IBM DT Framework",
     description: "Agile Development Methodology PPT.",
-    imageUrl: "https://drive.google.com/file/d/1jfPxwBbS1H5j8C5Q64YHuWShhbHD5WbG/view?usp=drivesdk",
-    iconUrl: "https://via.placeholder.com/45",
-    document_type: 1, // 1 for notes
-  },
-  {
-    name: "ADM Unit 2 - complete ppt",
-    description: "Waterfall model, V model, agile model.",
-    imageUrl: "https://drive.google.com/file/d/16R0TRrbKuOVTnWMRZSxbu8Hz-SMNbolW/view?usp=drivesdk",
+    imageUrl:
+      "https://drive.google.com/file/d/1jfPxwBbS1H5j8C5Q64YHuWShhbHD5WbG/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/45",
     document_type: 1, // 1 for notes
   },
   {
     name: "PYQ complete 2022",
-    description: "Previous year questions containing all subjects from the year 2022.",
-    imageUrl: "https://drive.google.com/file/d/1H53NfkMuJwcABtGjeDe1jQARelL8cXbJ/view?usp=drivesdk",
+    description:
+      "Previous year questions containing all subjects from the year 2022.",
+    imageUrl:
+      "https://drive.google.com/file/d/1H53NfkMuJwcABtGjeDe1jQARelL8cXbJ/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/45",
     document_type: 2, // 2 for question paper
   },
   {
     name: "Scrum complete notes- Unit 3",
     description: "Agile development methodology, ADM unit 3.",
-    imageUrl: "https://drive.google.com/file/d/11kzp7TR9WmIOUJ-gk0rfSMQrWfBgwsGk/view?usp=drivesdk",
+    imageUrl:
+      "https://drive.google.com/file/d/11kzp7TR9WmIOUJ-gk0rfSMQrWfBgwsGk/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/45",
     document_type: 1, // 1 for notes
   },
   {
-    name: "Scrum ADM Unit 4 (Deep Dive)",
-    description: "Agile development methodology, unit 4 complete.",
-    imageUrl: "https://drive.google.com/file/d/1bK3i_A745t1LjMOUD90UJTt6_sCQKbWl/view?usp=drivesdk",
-    iconUrl: "https://via.placeholder.com/45",
-    document_type: 1, // 1 for notes
-  },
-  {
-    name: "Engineering Mathematic - III Complete notes",
+    name: "Engineering Mathematics - III Complete notes",
     description: "Semester 3 notes, Maths M3.",
-    imageUrl: "https://drive.google.com/file/d/117m2zABHoEjCzah5BlK7DIMUrbD61Tet/view?usp=drivesdk",
+    imageUrl:
+      "https://drive.google.com/file/d/117m2zABHoEjCzah5BlK7DIMUrbD61Tet/view?usp=drivesdk",
     iconUrl: "https://via.placeholder.com/45",
     document_type: 1, // 1 for notes
-  }
+  },
 ];
-
-
-
 
 export const contributeSubjectOptions = [
   {
@@ -213,11 +207,12 @@ export const documents = [
   },
 ];
 
-// constants.js
 export const SUBJECT_OPTIONS = [
   { value: "Mathematics", label: "Mathematics" },
   { value: "Physics", label: "Physics" },
   { value: "Chemistry", label: "Chemistry" },
+  { value: "Biotechnology", label: "Biotechnology" },
+  { value: "Microbiology", label: "Microbiology" },
   { value: "Engineering Mechanics", label: "Engineering Mechanics" },
   { value: "Engineering Graphics", label: "Engineering Graphics" },
   {
@@ -241,7 +236,10 @@ export const SUBJECT_OPTIONS = [
   },
   { value: "Data Structures", label: "Data Structures" },
   { value: "Algorithms", label: "Algorithms" },
-  { value: "Database Management Systems", label: "Database Management Systems" },
+  {
+    value: "Database Management Systems",
+    label: "Database Management Systems",
+  },
   { value: "Operating Systems", label: "Operating Systems" },
   { value: "Computer Networks", label: "Computer Networks" },
   { value: "Software Engineering", label: "Software Engineering" },
@@ -251,22 +249,117 @@ export const SUBJECT_OPTIONS = [
   { value: "Machine Learning", label: "Machine Learning" },
   { value: "Data Science", label: "Data Science" },
   { value: "Web Development", label: "Web Development" },
-  { value: "Mobile Application Development", label: "Mobile Application Development" },
+  {
+    value: "Mobile Application Development",
+    label: "Mobile Application Development",
+  },
   { value: "Cyber Security", label: "Cyber Security" },
   { value: "Cloud Computing", label: "Cloud Computing" },
   { value: "Internet of Things", label: "Internet of Things" },
   { value: "Big Data Analytics", label: "Big Data Analytics" },
   { value: "Human-Computer Interaction", label: "Human-Computer Interaction" },
-  { value: "Otther", label: "Other"}
+  { value: "Business Analytics", label: "Business Analytics" },
+  { value: "Corporate Law", label: "Corporate Law" },
+  { value: "Banking and Finance Law", label: "Banking and Finance Law" },
+  {
+    value: "Development, Environment & Climate Change Law",
+    label: "Development, Environment & Climate Change Law",
+  },
+  { value: "Fashion Law", label: "Fashion Law" },
+  { value: "Health and Medicine Law", label: "Health and Medicine Law" },
+  { value: "Production Engineering", label: "Production Engineering" },
+  {
+    value: "Microelectronics and VLSI Design",
+    label: "Microelectronics and VLSI Design",
+  },
+  { value: "Structural Engineering", label: "Structural Engineering" },
+  {
+    value: "Pharmaceutical Biotechnology",
+    label: "Pharmaceutical Biotechnology",
+  },
+  { value: "Other", label: "Other" },
 ];
-
 
 export const BRANCH_OPTIONS = [
   { value: "", label: "Select Branch" },
   { value: "B.Tech. CSE Core", label: "B.Tech. CSE Core" },
   { value: "B.Tech. CSE DSAI", label: "B.Tech. CSE DSAI" },
   { value: "B.Tech. CSE Others", label: "B.Tech. CSE Others" },
-  { value: "B. Computer Application", label: "B. Computer Application" },
+  {
+    value: "B.Tech. in Civil Engineering",
+    label: "B.Tech. in Civil Engineering",
+  },
+  {
+    value: "B.Tech. in Mechanical Engineering",
+    label: "B.Tech. in Mechanical Engineering",
+  },
+  { value: "B.Tech. in Cyber Security", label: "B.Tech. in Cyber Security" },
+  {
+    value: "B.Tech. in Cloud Engineering and DevOps Automation",
+    label: "B.Tech. in Cloud Engineering and DevOps Automation",
+  },
+  { value: "B.Com (Hons.)", label: "B.Com (Hons.)" },
+  { value: "BBA", label: "BBA" },
+  {
+    value: "BBA with Business Analytics",
+    label: "BBA with Business Analytics",
+  },
+  { value: "BA LLB (Hons.)", label: "BA LLB (Hons.)" },
+  { value: "BBA LLB (Hons.)", label: "BBA LLB (Hons.)" },
+  { value: "LLB (Hons.)", label: "LLB (Hons.)" },
+  { value: "M.Com", label: "M.Com" },
+  { value: "M.Tech. in Biotechnology", label: "M.Tech. in Biotechnology" },
+  {
+    value: "M.Tech. in Computer Science and Engineering",
+    label: "M.Tech. in Computer Science and Engineering",
+  },
+  {
+    value: "M.Tech. in Civil Engineering",
+    label: "M.Tech. in Civil Engineering",
+  },
+  {
+    value: "M.Tech. in Production Engineering",
+    label: "M.Tech. in Production Engineering",
+  },
+  {
+    value: "M.Tech. in Electronics and Communication",
+    label: "M.Tech. in Electronics and Communication",
+  },
+  { value: "M.Sc. in Chemistry", label: "M.Sc. in Chemistry" },
+  { value: "M.Sc. in Physics", label: "M.Sc. in Physics" },
+  { value: "M.Sc. in Mathematics", label: "M.Sc. in Mathematics" },
+  { value: "M.Sc. in Biotechnology", label: "M.Sc. in Biotechnology" },
+  { value: "M.Sc. in Microbiology", label: "M.Sc. in Microbiology" },
+  {
+    value: "LLM in Corporate, Banking and Finance Law",
+    label: "LLM in Corporate, Banking and Finance Law",
+  },
+  {
+    value: "LLM in Development, Environment & Climate Change Law",
+    label: "LLM in Development, Environment & Climate Change Law",
+  },
+  { value: "LLM in Fashion Law", label: "LLM in Fashion Law" },
+  {
+    value: "LLM in Health and Medicine Law",
+    label: "LLM in Health and Medicine Law",
+  },
+  { value: "Diploma in Food Production", label: "Diploma in Food Production" },
+  {
+    value: "Diploma in Bakery and Confectionery",
+    label: "Diploma in Bakery and Confectionery",
+  },
+  { value: "PhD in English", label: "PhD in English" },
+  { value: "PhD in Chemistry", label: "PhD in Chemistry" },
+  { value: "PhD in Physics", label: "PhD in Physics" },
+  {
+    value: "PhD in Business/Management Studies",
+    label: "PhD in Business/Management Studies",
+  },
+  { value: "PhD in Mathematics", label: "PhD in Mathematics" },
+  {
+    value: "Other",
+    label: "Other",
+  },
 ];
 
 export const DOCUMENT_TYPES = [
@@ -274,8 +367,7 @@ export const DOCUMENT_TYPES = [
   { value: "notes", label: "Notes" },
 ];
 
-
 export const email_form = {
   name: "Edudoc",
-  email: "edudoc.zerodev@gmail.com"
-}
+  email: "edudoc.zerodev@gmail.com",
+};

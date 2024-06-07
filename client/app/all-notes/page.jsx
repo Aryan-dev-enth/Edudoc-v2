@@ -13,8 +13,8 @@ const Page = () => {
   const [allNotes, setAllNotes] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
-  const [sortCriteria, setSortCriteria] = useState("latest");
-  const [filterType, setFilterType] = useState("notes");
+  const [sortCriteria, setSortCriteria] = useState("alphabetical");
+  const [filterType, setFilterType] = useState("all");
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -64,13 +64,20 @@ const Page = () => {
         return notes.sort((a, b) => b.viewCount - a.viewCount);
       case "latest":
       default:
-        return notes.sort(
-          (a, b) => new Date(b.uploadDate) - new Date(a.uploadDate)
-        );
+        return notes.sort((a, b) => {
+          const dateA = new Date(a.published);
+          const dateB = new Date(b.published);
+          return dateB - dateA;
+        });
     }
   };
+  
+  
+  
+  
 
   const handleSortChange = (e) => {
+    console.log(e.target.value)
     setSortCriteria(e.target.value);
   };
 
@@ -161,6 +168,12 @@ const Page = () => {
           onChange={handleSortChange}
           className="p-2 border border-gray-300 rounded "
         >
+          {sortedVerifiedNotes.map((value, index)=>{
+            console.log(value.title)
+            return (
+              <div id={index}>{value.title}</div>
+            )
+          })}
           <option value="latest">Latest</option>
           <option value="alphabetical">Alphabetical</option>
           <option value="trending">Trending</option>

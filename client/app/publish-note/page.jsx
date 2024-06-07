@@ -12,7 +12,6 @@ import { sendEmail } from "@/services/emailService";
 
 const Page = () => {
   const { isLoaded, isSignedIn, user } = useUser();
-  
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -28,7 +27,16 @@ const Page = () => {
   const [successMessage, setSuccessMessage] = useState("");
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    const selectedFile = e.target.files[0];
+    const maxFileSize = 50 * 1024 * 1024; 
+
+    if (selectedFile.size > maxFileSize) {
+      setErrorMessage("File size exceeds 50MB. Please choose a smaller file.");
+      setFile(null);
+    } else {
+      setErrorMessage("");
+      setFile(selectedFile);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -57,7 +65,7 @@ const Page = () => {
 
       const response = await publishNotesAPI(formData);
 
-      const recipientEmail = user.emailAddresses[0].emailAddress
+      const recipientEmail = user.emailAddresses[0].emailAddress;
       const messageContent = `Title: ${title}\nContent: ${content}\nCollege: ${college}\nSubject: ${subject}\nBranch: ${branch}`;
       await sendEmail(
         { name: "Edudoc", email: user.emailAddress },
@@ -90,7 +98,7 @@ const Page = () => {
       </div>
     );
   }
-  console.log(user.emailAddresses[0].emailAddress)
+  console.log(user.emailAddresses[0].emailAddress);
   if (isUploading) {
     return <ScreenLoader />;
   }
@@ -102,7 +110,7 @@ const Page = () => {
           <Lottie
             animationData={contributeanimation}
             loop={true}
-            className="w-[100%] h-auto hidden lg:block"
+            className="w-[100%] h-auto hidden lg:block -z-0"
           />
         </div>
         <div className="lg:w-1/2 h-full flex flex-col justify-center items-center pt-20">
@@ -193,7 +201,7 @@ const Page = () => {
             </div>
             <div className="mb-4">
               <label className="block text-gray-700">Type:</label>
-              <div>
+              <div className="flex gap-4">
                 {DOCUMENT_TYPES.map((type) => (
                   <label key={type.value}>
                     <input
@@ -219,7 +227,7 @@ const Page = () => {
                 onChange={handleFileChange}
                 accept=".pdf"
                 name="file"
-                className="mt-1 w-full border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                className="mt-1 w-full border border-gray-300 rounded focus:outline-none focus:border-blue-500 p-2"
               />
             </div>
             <button
