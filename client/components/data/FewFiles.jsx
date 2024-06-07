@@ -27,7 +27,7 @@ const FewFiles = () => {
       <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-500 text-center mb-8">
         Explore handwritten notes, study materials from all over the globe.
       </h4>
-      <div className="w-full lg:w-[50vw] h-auto lg:h-[60vh] rounded-3xl shadow-xl bg-white pt-16 flex flex-col items-center ">
+      <div className="w-full lg:w-[50vw] h-auto  rounded-3xl shadow-xl bg-white pt-16 flex flex-col items-center ">
         <div className="nav w-full h-auto flex justify-center items-center">
           <ul className="w-full h-full flex items-center justify-center gap-16 list-none">
             {fewFileNav.map((navLink, index) => (
@@ -44,7 +44,7 @@ const FewFiles = () => {
           </ul>
         </div>
 
-        <div className=" container px-12 flex flex-col lg:flex-row lg:flex-wrap">
+        <div className=" container px-12 sm:flex sm:flex-row flex flex-col flex-wrap h-auto w-full justify-center items-center">
           {filteredFiles.map((file, index) => (
             <FileCard
               data={file}
