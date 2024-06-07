@@ -13,6 +13,8 @@ const Page = () => {
   const [allNotes, setAllNotes] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  const [sortCriteria, setSortCriteria] = useState("latest");
+  const [filterType, setFilterType] = useState("notes");
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -20,24 +22,18 @@ const Page = () => {
         const isAdmin = user.publicMetadata.isAdmin ? true : false;
 
         try {
+          setLoading(true);
           if (isAdmin) {
-            setLoading(true);
             const allNotesResponse = await getNotes(true);
             setAllNotes(allNotesResponse.data.data);
 
-           
-            
             const verifiedNotesResponse = await getNotes(false);
             setVerifiedNotes(verifiedNotesResponse.data.data);
-            setLoading(false)
           } else {
-            setLoading(true);
-            
             const verifiedNotesResponse = await getNotes(false);
             setVerifiedNotes(verifiedNotesResponse.data.data);
-            setLoading(false);
           }
-
+          setLoading(false);
           setUpdated(false);
         } catch (error) {
           console.error("Error fetching notes:", error);
@@ -60,21 +56,56 @@ const Page = () => {
     );
   };
 
+  const sortNotes = (notes) => {
+    switch (sortCriteria) {
+      case "alphabetical":
+        return notes.sort((a, b) => a.title.localeCompare(b.title));
+      case "trending":
+        return notes.sort((a, b) => b.viewCount - a.viewCount);
+      case "latest":
+      default:
+        return notes.sort(
+          (a, b) => new Date(b.uploadDate) - new Date(a.uploadDate)
+        );
+    }
+  };
+
+  const handleSortChange = (e) => {
+    setSortCriteria(e.target.value);
+  };
+
+  const handleFilterTypeChange = (e) => {
+    setFilterType(e.target.value);
+  };
+
+  const filterByType = (notes) => {
+    if (filterType === "all") return notes;
+    return notes.filter((note) => note.document_type === filterType);
+  };
+
   if (!isSignedIn) {
     return (
-      <div className="w-screen h-screen bg-p[#fffff7] flex flex-col justify-center items-center ">
-        <h1 className="lg:text-2xl text-md font-light">Be logged in to view all the notes !</h1>
-       
+      <div className="w-screen h-screen bg-[#fffff7] flex flex-col justify-center items-center">
+        <h1 className="lg:text-2xl text-md font-light">
+          Be logged in to view all the notes!
+        </h1>
       </div>
     );
   }
-  if(loading)
-    {
-      return <ScreenLoader/>
-    }
+
+  if (loading) {
+    return <ScreenLoader />;
+  }
+
+  const sortedVerifiedNotes = verifiedNotes
+    ? sortNotes(filterByType(filterNotes(verifiedNotes)))
+    : [];
+  const sortedAllNotes = allNotes
+    ? sortNotes(filterByType(filterNotes(allNotes)))
+    : [];
 
   return (
-    <div className="w-screen min-h-screen bg-[#fffff7] flex flex-col items-center gap-2 lg:gap-8 sm:gap-16 pt-32 overflow-hidden px-4">
+    <div className="w-screen min-h-screen bg-[#fffff7] flex flex-col items-center gap-8 pt-32 px-4">
       <h1 className="text-4xl md:text-6xl font-bold text-black text-center">
         Last moment?
       </h1>
@@ -82,13 +113,69 @@ const Page = () => {
         Don't worry, we got you covered!
       </h4>
       <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+
+      <div className="w-full flex justify-center mb-4 gap-4">
+        <label htmlFor="sortCriteria" className="text-lg font-medium">
+          Sort by:
+        </label>
+        <select
+          id="sortCriteria"
+          value={sortCriteria}
+          onChange={handleSortChange}
+          className="p-2 border border-gray-300 rounded"
+        >
+          <option value="latest">Latest</option>
+          <option value="alphabetical">Alphabetical</option>
+          <option value="trending">Trending</option>
+        </select>
+      </div>
+      
+      <div className="w-full flex justify-center mb-4 gap-4">
+        <label htmlFor="filterType" className="text-lg font-medium">
+          Filter by:
+        </label>
+        <div className="flex items-center">
+          <input
+            type="radio"
+            id="notes"
+            value="notes"
+            checked={filterType === "notes"}
+            onChange={handleFilterTypeChange}
+            className="mr-2"
+          />
+          <label htmlFor="notes" className="mr-4">
+            Notes
+          </label>
+          <input
+            type="radio"
+            id="questionpapers"
+            value="question_paper"
+            checked={filterType === "question_paper"}
+            onChange={handleFilterTypeChange}
+            className="mr-2"
+          />
+          <label htmlFor="questionpapers" className="mr-4">
+            Question Papers
+          </label>
+          <input
+            type="radio"
+            id="all"
+            value="all"
+            checked={filterType === "all"}
+            onChange={handleFilterTypeChange}
+            className="mr-2"
+          />
+          <label htmlFor="all">
+            All
+          </label>
+        </div>
+      </div>
+
       {verifiedNotes ? (
         <>
-          <h2 className="text-2xl lg:mt-4 font-bold text-black">
-            Verified Documents
-          </h2>
+          <h2 className="text-2xl font-bold text-black">Verified Documents</h2>
           <DocumentContainer
-            data={filterNotes(verifiedNotes)}
+            data={sortedVerifiedNotes}
             setUpdated={setUpdated}
           />
         </>
@@ -98,10 +185,7 @@ const Page = () => {
       {user.publicMetadata.isAdmin && allNotes ? (
         <>
           <h2 className="text-2xl font-bold text-black">Admin Dashboard</h2>
-          <DocumentContainer
-            data={filterNotes(allNotes)}
-            setUpdated={setUpdated}
-          />
+          <DocumentContainer data={sortedAllNotes} setUpdated={setUpdated} />
         </>
       ) : (
         user.publicMetadata.isAdmin && <h1>Nothing to display for all notes</h1>

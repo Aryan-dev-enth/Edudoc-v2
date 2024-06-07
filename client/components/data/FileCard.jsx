@@ -22,7 +22,7 @@ const FileCard = (props) => {
           {truncateText(name, 10)}
         </h1></a>
         <div className="flex items-center gap-2">
-          <img src={iconUrl} alt="" className="w-[20px] h-[20px]" />
+          
           <h4 className="text-xs overflow-hidden overflow-ellipsis whitespace-nowrap">
             {truncateText(description, 15)}
           </h4>
