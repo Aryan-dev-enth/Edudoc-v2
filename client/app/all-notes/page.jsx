@@ -114,24 +114,10 @@ const Page = () => {
       </h4>
       <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
-      <div className="w-full flex justify-center mb-4 gap-4">
-        <label htmlFor="sortCriteria" className="text-lg font-medium">
-          Sort by:
-        </label>
-        <select
-          id="sortCriteria"
-          value={sortCriteria}
-          onChange={handleSortChange}
-          className="p-2 border border-gray-300 rounded"
-        >
-          <option value="latest">Latest</option>
-          <option value="alphabetical">Alphabetical</option>
-          <option value="trending">Trending</option>
-        </select>
-      </div>
       
-      <div className="w-full flex justify-center mb-4 gap-4">
-        <label htmlFor="filterType" className="text-lg font-medium">
+      
+      <div className="w-full flex justify-center items-center sm:flex-row flex-col mb-4 gap-4  text-sm lg:text-lg px-8">
+        <label htmlFor="filterType" className=" font-medium">
           Filter by:
         </label>
         <div className="flex items-center">
@@ -169,6 +155,16 @@ const Page = () => {
             All
           </label>
         </div>
+        <select
+          id="sortCriteria"
+          value={sortCriteria}
+          onChange={handleSortChange}
+          className="p-2 border border-gray-300 rounded "
+        >
+          <option value="latest">Latest</option>
+          <option value="alphabetical">Alphabetical</option>
+          <option value="trending">Trending</option>
+        </select>
       </div>
 
       {verifiedNotes ? (
