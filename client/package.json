@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.0.12",
+    "@emailjs/browser": "^4.3.3",
     "axios": "^1.6.8",
     "dotenv": "^16.4.5",
     "emailjs": "^4.0.3",
