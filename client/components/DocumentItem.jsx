@@ -108,11 +108,11 @@ const DocumentItem = ({ data, setUpdated }) => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between border-b my-2 border-gray-300 py-3 px-4 rounded-lg shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer hover:scale-[1.005]">
       <div className="flex-grow">
-        <p className="font-medium text-gray-800 text-sm text-center md:text-left md:text-lg">
+        <p className="font-medium text-gray-800 text-sm text-center md:text-left md:text-lg capitalize">
           {title}
         </p>
         <p className="text-gray-500 text-sm md:text-base hidden md:block">
-          Author: {author.split("@")[0] || "Anonymous"}
+          {author.split("@")[0] || "Anonymous"}
         </p>
       </div>
 
