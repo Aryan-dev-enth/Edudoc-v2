@@ -60,7 +60,7 @@ const Page = () => {
       const messageContent = `Title: ${title}\nContent: ${content}\nCollege: ${college}\nSubject: ${subject}\nBranch: ${branch}`;
       await sendEmail(
         { name: "Edudoc", email: "edudoc.community@gmail.com" },
-        user.emailAddresses[0].emailAddress,
+        author,
         messageContent
       );
 
