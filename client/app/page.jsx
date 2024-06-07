@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { useState, useEffect } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import Landing from "@/components/landing/Landing";
@@ -26,7 +26,9 @@ export default function Home() {
     <div className="w-screen relative transition-opacity overflow-x-hidden ">
       <Navbar />
       <Landing />
+
       <DataSection />
+
       <FewFiles />
       <Footer />
     </div>

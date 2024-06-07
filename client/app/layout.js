@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 
+import { Analytics } from "@vercel/analytics/react"
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -18,6 +20,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           
           {children}
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
