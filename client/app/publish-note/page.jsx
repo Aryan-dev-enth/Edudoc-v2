@@ -6,7 +6,7 @@ import { publishNotesAPI } from "@/apiCalls";
 import { DOCUMENT_TYPES, SUBJECT_OPTIONS, BRANCH_OPTIONS } from "@/constant";
 import ClipLoader from "react-spinners/ClipLoader";
 
-import { useUser } from "@clerk/nextjs";
+import { isLoaded, isSignedIn, useUser } from "@clerk/nextjs";
 import ScreenLoader from "@/components/ScreenLoader";
 
 const Page = () => {
@@ -71,11 +71,18 @@ const Page = () => {
 
     setUploading(false);
   };
-
-  if(isUploading)
-    {
-      return <ScreenLoader />
-    }
+  if (!isLoaded || !isSignedIn) {
+    return (
+      <div className="w-screen h-screen bg-p[#fffff7] flex flex-col justify-center items-center">
+        <h1 className="lg:text-2xl text-md font-light">
+          Be logged in to contribute any document !
+        </h1>
+      </div>
+    );
+  }
+  if (isUploading) {
+    return <ScreenLoader />;
+  }
 
   return (
     <div className="container mx-auto px-4 bg-[#fffff7]">
