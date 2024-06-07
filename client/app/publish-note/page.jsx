@@ -73,7 +73,7 @@ const Page = () => {
       setSubject("");
 
       setSuccessMessage(response.message);
-      alert(response.message + "\nRefresh the tab for if any error is faced!");
+      alert(response.message + "\nConfirmation email has been sent to your registered mail!");
     } catch (error) {
       setErrorMessage("Failed to upload. Please try again.");
     }
