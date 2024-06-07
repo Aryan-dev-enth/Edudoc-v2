@@ -4,12 +4,13 @@ import Lottie from "lottie-react";
 import contributeanimation from "/public/contribute animation.json";
 import { publishNotesAPI } from "@/apiCalls";
 import { DOCUMENT_TYPES, SUBJECT_OPTIONS, BRANCH_OPTIONS } from "@/constant";
+import ClipLoader from "react-spinners/ClipLoader";
 
 import { useUser } from "@clerk/nextjs";
+import ScreenLoader from "@/components/ScreenLoader";
 
 const Page = () => {
   const { isLoaded, isSignedIn, user } = useUser();
-  
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -50,11 +51,9 @@ const Page = () => {
       formData.append("file", file);
 
       setUploading(true);
-      setFile(null)
+      setFile(null);
 
       const response = await publishNotesAPI(formData);
-
-
 
       setTitle("");
       setContent("");
@@ -65,13 +64,18 @@ const Page = () => {
       setSubject("");
 
       setSuccessMessage(response.message);
-      alert(response.message +"\nRefresh the tab for if any error is faced!");
+      alert(response.message + "\nRefresh the tab for if any error is faced!");
     } catch (error) {
       setErrorMessage("Failed to upload. Please try again.");
     }
 
     setUploading(false);
   };
+
+  if(isUploading)
+    {
+      return <ScreenLoader />
+    }
 
   return (
     <div className="container mx-auto px-4 bg-[#fffff7]">
@@ -138,7 +142,6 @@ const Page = () => {
               <select
                 id="subject"
                 name="subject"
-                
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
                 required
@@ -203,9 +206,19 @@ const Page = () => {
             </div>
             <button
               type="submit"
-              className="bg-blue-600 text-white px-4 py-2 rounded focus:outline-none"
+              className="bg-blue-600 text-white px-4 py-1 rounded focus:outline-none"
             >
-              {isUploading ? "Uploading..." : "Submit"}
+              {isUploading ? (
+                <ClipLoader
+                  color={"black"}
+                  loading={isUploading}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                  className="text-black w-10% h-10% border-1"
+                />
+              ) : (
+                "Submit"
+              )}
             </button>
           </form>
           {errorMessage && (
