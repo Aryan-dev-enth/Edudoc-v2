@@ -13,7 +13,7 @@ const Page = () => {
   const [allNotes, setAllNotes] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
-  const [sortCriteria, setSortCriteria] = useState("latest");
+  const [sortCriteria, setSortCriteria] = useState("alphabetical");
   const [filterType, setFilterType] = useState("all");
 
   useEffect(() => {
