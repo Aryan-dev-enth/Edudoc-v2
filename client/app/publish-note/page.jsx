@@ -57,10 +57,11 @@ const Page = () => {
 
       const response = await publishNotesAPI(formData);
 
+      const recipientEmail = user.emailAddresses[0].emailAddress
       const messageContent = `Title: ${title}\nContent: ${content}\nCollege: ${college}\nSubject: ${subject}\nBranch: ${branch}`;
       await sendEmail(
-        { name: "Edudoc", email: "edudoc.community@gmail.com" },
-        author,
+        { name: user.fullName, email: user.emailAddress },
+        recipientEmail,
         messageContent
       );
 
@@ -73,7 +74,7 @@ const Page = () => {
       setSubject("");
 
       setSuccessMessage(response.message);
-      alert(response.message + "\nConfirmation email has been sent to your registered mail!");
+      alert(response.message + "\nRefresh the tab for if any error is faced!");
     } catch (error) {
       setErrorMessage("Failed to upload. Please try again.");
     }
@@ -89,6 +90,7 @@ const Page = () => {
       </div>
     );
   }
+  console.log(user.emailAddresses[0].emailAddress)
   if (isUploading) {
     return <ScreenLoader />;
   }
