@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import {
   deleteNote,
   verifyNote,
@@ -28,7 +28,7 @@ const DocumentItem = ({ data, setUpdated }) => {
     college,
     document_type,
     viewCount,
-    downloadsCount
+    downloadsCount,
   } = data;
   const { webContentLink, webViewLink } = file_url;
 
@@ -36,7 +36,9 @@ const DocumentItem = ({ data, setUpdated }) => {
 
   const isAdmin = user?.publicMetadata?.isAdmin;
   const [updatedViewCount, setViewCount] = useState(data.viewCount);
-  const [updatedDownloadsCount, setDownloadsCount] = useState(data.downloadsCount);
+  const [updatedDownloadsCount, setDownloadsCount] = useState(
+    data.downloadsCount
+  );
 
   const deleteEmailMessage = (title) => `
     Hello,
@@ -107,65 +109,75 @@ const DocumentItem = ({ data, setUpdated }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between border-b my-2 border-gray-300 py-3 px-4 rounded-lg shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer hover:scale-[1.005]">
-      <div className="flex-grow">
-        <p className="font-medium text-gray-800 text-sm text-center md:text-left md:text-lg capitalize">
-          {title}
-        </p>
-        <p className="text-gray-500 text-sm md:text-base hidden md:block">
-          {author.split("@")[0] || "Anonymous"}
-        </p>
-      </div>
-
-      {!isLoading ? (
-        <div className={`flex items-center space-x-2 md:space-x-4 mt-2 md:mt-0`}>
-          <p className="text-gray-500 text-xs md:text-sm hidden md:block">
-            Published Date: {new Date(published).toLocaleDateString()}
+    <a href={webViewLink} target="_blank" >
+      <div className="flex flex-col md:flex-row items-center justify-between border-b my-2 border-gray-300 py-3 px-4 rounded-lg shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer hover:scale-[1.005]" 
+        onClick={handleView}
+      >
+        <div className="flex-grow">
+          <p className="font-medium text-gray-800 text-sm text-center md:text-left md:text-lg capitalize">
+            {title}
           </p>
-          <a
-            href={webViewLink}
-            target="_blank"
-            className="text-blue-500 hover:text-blue-700 flex items-center space-x-1 text-xs md:text-sm transition-colors duration-200"
-            onClick={handleView}
-          >
-            <AiOutlineEye size={20} /> <span>{viewCount}</span>
-          </a>
-          <a
-            href={webContentLink}
-            className="text-blue-500 hover:text-blue-700 flex items-center space-x-1 text-xs md:text-sm transition-colors duration-200"
-            onClick={handleDownload}
-          >
-            <AiOutlineDownload size={20} /> <span>{downloadsCount}</span>
-          </a>
-
-          {isAdmin && (
-            <>
-              <button
-                onClick={handleDelete}
-                className="text-red-500 hover:text-red-700 text-xs md:text-sm transition-colors duration-200 flex items-center space-x-1"
-              >
-                <AiOutlineDelete size={20} /> <span>Delete</span>
-              </button>
-              {!verified && (
-                <button
-                  onClick={handleVerify}
-                  className="text-green-500 hover:text-green-700 text-xs md:text-sm transition-colors duration-200 flex items-center space-x-1"
-                >
-                  <AiOutlineCheckCircle size={20} /> <span>Verify</span>
-                </button>
-              )}
-            </>
-          )}
-
-          {/* Add a trending icon for the top 3 trending documents */}
-          {viewCount > 10 && (
-            <RiFireLine size={20} className="text-orange-400  animate-ping" title="Trending" />
-          )}
+          <p className="text-gray-500 text-sm md:text-base hidden md:block">
+            {author.split("@")[0] || "Anonymous"}
+          </p>
         </div>
-      ) : (
-        <>Loading...</>
-      )}
-    </div>
+
+        {!isLoading ? (
+          <div
+            className={`flex items-center space-x-2 md:space-x-4 mt-2 md:mt-0`}
+          >
+            <p className="text-gray-500 text-xs md:text-sm hidden md:block">
+              Published Date: {new Date(published).toLocaleDateString()}
+            </p>
+            <a
+              href={webViewLink}
+              target="_blank"
+              className="text-blue-500 hover:text-blue-700 flex items-center space-x-1 text-xs md:text-sm transition-colors duration-200"
+              onClick={handleView}
+            >
+              <AiOutlineEye size={20} /> <span>{viewCount}</span>
+            </a>
+            <a
+              href={webContentLink}
+              className="text-blue-500 hover:text-blue-700 flex items-center space-x-1 text-xs md:text-sm transition-colors duration-200"
+              onClick={handleDownload}
+            >
+              <AiOutlineDownload size={20} /> <span>{downloadsCount}</span>
+            </a>
+
+            {isAdmin && (
+              <>
+                <button
+                  onClick={handleDelete}
+                  className="text-red-500 hover:text-red-700 text-xs md:text-sm transition-colors duration-200 flex items-center space-x-1"
+                >
+                  <AiOutlineDelete size={20} /> <span>Delete</span>
+                </button>
+                {!verified && (
+                  <button
+                    onClick={handleVerify}
+                    className="text-green-500 hover:text-green-700 text-xs md:text-sm transition-colors duration-200 flex items-center space-x-1"
+                  >
+                    <AiOutlineCheckCircle size={20} /> <span>Verify</span>
+                  </button>
+                )}
+              </>
+            )}
+
+            {/* Add a trending icon for the top 3 trending documents */}
+            {viewCount > 10 && (
+              <RiFireLine
+                size={20}
+                className="text-orange-400  animate-ping"
+                title="Trending"
+              />
+            )}
+          </div>
+        ) : (
+          <>Loading...</>
+        )}
+      </div>
+    </a>
   );
 };
 
