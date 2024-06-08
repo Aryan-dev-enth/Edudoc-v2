@@ -125,10 +125,10 @@ const DocumentItem = ({ data, setUpdated }) => {
           <a
             href={webViewLink}
             target="_blank"
-            className="text-blue-500 hover:text-blue-700 flex items-center space-x-1 text-xs md:text-sm transition-colors duration-200"
+            className="text-blue-500 hover:text-blue-700 flex items-center space-x-1 text-xs md:text-sm transition-colors duration-200 gap-1"
             onClick={handleView}
-          > 
-            <AiOutlineEye size={20} />View PDF <span>{viewCount}</span>
+          > View PDF 
+            <AiOutlineEye size={20} /> <span>{viewCount}</span>
           </a>
           <a
             href={webContentLink}
