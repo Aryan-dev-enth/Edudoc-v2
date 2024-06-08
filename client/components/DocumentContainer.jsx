@@ -32,10 +32,15 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
       case "alphabetical":
         return documents.sort((a, b) => a.title.localeCompare(b.title));
       case "latest":
-        return documents.sort((a, b) => new Date(b.published) - new Date(a.published));
+        return documents.sort(
+          (a, b) => new Date(b.published) - new Date(a.published)
+        );
       case "trending":
       default:
-        return documents.sort((a, b) => b.viewCount - a.viewCount || b.downloadsCount - a.downloadsCount);
+        return documents.sort(
+          (a, b) =>
+            b.viewCount - a.viewCount || b.downloadsCount - a.downloadsCount
+        );
     }
   };
 
@@ -83,42 +88,52 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
   return (
     <div className="w-full sm:w-[90%] h-full p-4 rounded-lg mt-4 ">
       <div className=" w-full flex flex-row  justify-center items-end gap-2 p-2">
-        <div className="w-1/2 flex  justify-end mb-4">
-        <select
-          id="sortCriteria"
-          value={sortCriteria}
-          onChange={handleSortChange}
-          className="p-2 border border-gray-300 rounded w-full text-sm lg:text-md"
-        >
-          {BRANCH_OPTIONS.map((branch, index)=>(
-            <option className="text-sm lg:text-md" value={branch.value}>{branch.label}</option>
-          ))}
-        </select>
-      </div>
-      <div className="w-1/2 flex justify-end mb-4">
-        <select
-          id="sortCriteria"
-          value={sortCriteria}
-          onChange={handleSortChange}
-          className="p-2 border border-gray-300 rounded w-full text-sm lg:text-md"
-        >
-         {SUBJECT_OPTIONS.map((subject, index)=>(
-            <option className="text-sm lg:text-md" value={subject.value}>{subject.label}</option>
-          ))}
-        </select>
-      </div>
-      <div className="w-1/2 flex justify-end mb-4">
-        <select
-          id="sortCriteria"
-          value={sortCriteria}
-          onChange={handleSortChange}
-          className="p-2 border border-gray-300 rounded w-full text-sm lg:text-md"
-        >
-          <option className="text-sm lg:text-md" value="trending">Trending</option>
-          <option className="text-sm lg:text-md" value="latest">Latest</option>
-          <option className="text-sm lg:text-md" value="alphabetical">Alphabetical</option>
-        </select>
-      </div>
+        {/* <div className="w-1/2 flex  justify-end mb-4">
+          <select
+            id="sortCriteria"
+            value={sortCriteria}
+            onChange={handleSortChange}
+            className="p-2 border border-gray-300 rounded w-full text-sm lg:text-md"
+          >
+            {BRANCH_OPTIONS.map((branch, index) => (
+              <option className="text-sm lg:text-md" value={branch.value}>
+                {branch.label}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="w-1/2 flex justify-end mb-4">
+          <select
+            id="sortCriteria"
+            value={sortCriteria}
+            onChange={handleSortChange}
+            className="p-2 border border-gray-300 rounded w-full text-sm lg:text-md"
+          >
+            {SUBJECT_OPTIONS.map((subject, index) => (
+              <option className="text-sm lg:text-md" value={subject.value}>
+                {subject.label}
+              </option>
+            ))}
+          </select>
+        </div> */}
+        <div className="w-1/2 flex justify-end mb-4">
+          <select
+            id="sortCriteria"
+            value={sortCriteria}
+            onChange={handleSortChange}
+            className="p-2 border border-gray-300 rounded w-full text-sm lg:text-md"
+          >
+            <option className="text-sm lg:text-md" value="trending">
+              Trending
+            </option>
+            <option className="text-sm lg:text-md" value="latest">
+              Latest
+            </option>
+            <option className="text-sm lg:text-md" value="alphabetical">
+              Alphabetical
+            </option>
+          </select>
+        </div>
       </div>
       {totalPages > 1 && (
         <div className="flex justify-between mt-4 space-x-2">
@@ -145,7 +160,7 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
             Previous
           </button>
           <span className="px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg bg-gray-200 text-gray-700">
-             {currentPage} of {totalPages}
+            {currentPage} of {totalPages}
           </span>
           <button
             onClick={handleNextPage}
@@ -172,8 +187,13 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
         </div>
       )}
       {sortedData.map((document, index) => {
-        if (index >= (currentPage - 1) * documentsPerPage && index < currentPage * documentsPerPage) {
-          return <DocumentItem key={index} data={document} setUpdated={setUpdated} />;
+        if (
+          index >= (currentPage - 1) * documentsPerPage &&
+          index < currentPage * documentsPerPage
+        ) {
+          return (
+            <DocumentItem key={index} data={document} setUpdated={setUpdated} />
+          );
         }
         return null;
       })}
