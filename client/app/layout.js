@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
           
           {children}
           <Analytics />
+          <SpeedInsights />
         </body>
       </html>
     </ClerkProvider>

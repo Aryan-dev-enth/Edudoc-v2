@@ -48,7 +48,7 @@ const Landing = () => {
           alt=""
           className="h-32 md:h-1/2 object-contain"
         />
-        <h1 className="text-3xl md:text-6xl font-bold text-white text-center">
+        <h1 className="text-3xl  md:text-6xl font-bold text-white text-center">
           Welcome to Edudoc
         </h1>
         <h4 className="text-base md:text-2xl text-white text-center">

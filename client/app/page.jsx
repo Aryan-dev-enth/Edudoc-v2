@@ -23,7 +23,7 @@ export default function Home() {
   }
 
   return (
-    <div className="w-screen relative transition-opacity overflow-x-hidden ">
+    <div className="w-screen relative  transition-opacity overflow-x-hidden ">
       <Navbar />
       <Landing />
 
