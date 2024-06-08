@@ -13,7 +13,6 @@ const Page = () => {
   const [allNotes, setAllNotes] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
-  const [sortCriteria, setSortCriteria] = useState("alphabetical");
   const [filterType, setFilterType] = useState("all");
 
   useEffect(() => {
@@ -56,30 +55,6 @@ const Page = () => {
     );
   };
 
-  const sortNotes = (notes) => {
-    switch (sortCriteria) {
-      case "alphabetical":
-        return notes.sort((a, b) => a.title.localeCompare(b.title));
-      case "trending":
-        return notes.sort((a, b) => b.viewCount - a.viewCount);
-      case "latest":
-      default:
-        return notes.sort((a, b) => {
-          const dateA = new Date(a.published);
-          const dateB = new Date(b.published);
-          return dateB - dateA;
-        });
-    }
-  };
-  
-  
-  
-  
-
-  const handleSortChange = (e) => {
-    setSortCriteria(e.target.value);
-  };
-
   const handleFilterTypeChange = (e) => {
     setFilterType(e.target.value);
   };
@@ -103,11 +78,11 @@ const Page = () => {
     return <ScreenLoader />;
   }
 
-  const sortedVerifiedNotes = verifiedNotes
-    ? sortNotes(filterByType(filterNotes(verifiedNotes)))
+  const filteredVerifiedNotes = verifiedNotes
+    ? filterByType(filterNotes(verifiedNotes))
     : [];
-  const sortedAllNotes = allNotes
-    ? sortNotes(filterByType(filterNotes(allNotes)))
+  const filteredAllNotes = allNotes
+    ? filterByType(filterNotes(allNotes))
     : [];
 
   return (
@@ -120,10 +95,8 @@ const Page = () => {
       </h4>
       <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
-      
-      
-      <div className="w-full flex justify-center items-center sm:flex-row flex-col mb-4 gap-4  text-sm lg:text-lg px-8">
-        <label htmlFor="filterType" className=" font-medium">
+      <div className="w-full flex justify-center items-center sm:flex-row flex-col mb-4 gap-4 text-sm lg:text-lg px-8">
+        <label htmlFor="filterType" className="font-medium">
           Filter by:
         </label>
         <div className="flex items-center">
@@ -133,7 +106,7 @@ const Page = () => {
             value="notes"
             checked={filterType === "notes"}
             onChange={handleFilterTypeChange}
-            className="mr-2"
+            className="mr-2  cursor-pointer"
           />
           <label htmlFor="notes" className="mr-4">
             Notes
@@ -144,7 +117,7 @@ const Page = () => {
             value="question_paper"
             checked={filterType === "question_paper"}
             onChange={handleFilterTypeChange}
-            className="mr-2"
+            className="mr-2  cursor-pointer"
           />
           <label htmlFor="questionpapers" className="mr-4">
             Question Papers
@@ -155,29 +128,17 @@ const Page = () => {
             value="all"
             checked={filterType === "all"}
             onChange={handleFilterTypeChange}
-            className="mr-2"
+            className="mr-2  cursor-pointer"
           />
-          <label htmlFor="all">
-            All
-          </label>
+          <label htmlFor="all">All</label>
         </div>
-        <select
-          id="sortCriteria"
-          value={sortCriteria}
-          onChange={handleSortChange}
-          className="p-2 border border-gray-300 rounded "
-        >
-          <option value="latest">Latest</option>
-          <option value="alphabetical">Alphabetical</option>
-          <option value="trending">Trending</option>
-        </select>
       </div>
 
       {verifiedNotes ? (
         <>
           <h2 className="text-2xl font-bold text-black">Verified Documents</h2>
           <DocumentContainer
-            data={sortedVerifiedNotes}
+            data={filteredVerifiedNotes}
             setUpdated={setUpdated}
           />
         </>
@@ -187,7 +148,7 @@ const Page = () => {
       {user.publicMetadata.isAdmin && allNotes ? (
         <>
           <h2 className="text-2xl font-bold text-black">Admin Dashboard</h2>
-          <DocumentContainer data={sortedAllNotes} setUpdated={setUpdated} />
+          <DocumentContainer data={filteredAllNotes} setUpdated={setUpdated} />
         </>
       ) : (
         user.publicMetadata.isAdmin && <h1>Nothing to display for all notes</h1>

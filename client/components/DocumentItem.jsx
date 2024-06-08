@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import {
   deleteNote,
   verifyNote,
@@ -13,6 +13,7 @@ import {
   AiOutlineDelete,
   AiOutlineCheckCircle,
 } from "react-icons/ai";
+import { RiFireLine } from "react-icons/ri"; // Import the trending icon
 import { sendEmail } from "@/services/emailService"; // Make sure this path is correct
 
 const DocumentItem = ({ data, setUpdated }) => {
@@ -117,7 +118,7 @@ const DocumentItem = ({ data, setUpdated }) => {
       </div>
 
       {!isLoading ? (
-        <div className="flex items-center space-x-2 md:space-x-4 mt-2 md:mt-0">
+        <div className={`flex items-center space-x-2 md:space-x-4 mt-2 md:mt-0`}>
           <p className="text-gray-500 text-xs md:text-sm hidden md:block">
             Published Date: {new Date(published).toLocaleDateString()}
           </p>
@@ -154,6 +155,11 @@ const DocumentItem = ({ data, setUpdated }) => {
                 </button>
               )}
             </>
+          )}
+
+          {/* Add a trending icon for the top 3 trending documents */}
+          {viewCount > 10 && (
+            <RiFireLine size={20} className="text-orange-400  animate-ping" title="Trending" />
           )}
         </div>
       ) : (
