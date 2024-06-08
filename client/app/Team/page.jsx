@@ -10,12 +10,12 @@ const TeamPage = () => {
     {
       name: 'Aryan Singh',
       role: 'Fullstack Developer',
-      imgSrc: '/aryan.jpg',
+      imgSrc: '/aryan.JPG',
       twitter: 'https://twitter.com/just_i_aryan_28',
       linkedin: 'https://www.linkedin.com/in/aryan-singh-459b6b225',
       github: 'https://github.com/Aryan-dev-enth',
       about: 'Hi, Im Aryan. A full-stack developer with a strong passion for building end-to-end web applications. I enjoy working on both the frontend and backend to create seamless user experiences.',
-      course: 'Currently pursuing B.Tech in Computer Science Engineering',
+      course: 'Currently pursuing B.Tech in SComputer Science Engineering',
       university: 'SRM University'
     },
     {
