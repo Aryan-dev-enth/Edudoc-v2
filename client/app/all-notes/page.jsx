@@ -66,7 +66,8 @@ const Page = () => {
 
   if (!isSignedIn) {
     return (
-      <div className="w-screen h-screen bg-[#fffff7] flex flex-col justify-center items-center">
+      <div className="w-screen h-screen bg-[#fffff7] flex flex-col justify-center items-center gap-4">
+        <img src="crying.jpg" alt="" className="h-1/4 rounded-xl " />
         <h1 className="lg:text-2xl text-md font-light">
           Be logged in to view all the notes!
         </h1>
