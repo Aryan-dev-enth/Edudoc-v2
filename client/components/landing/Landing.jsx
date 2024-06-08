@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import Search from "../Search";
 import { getNotes } from "@/apiCalls";
@@ -17,7 +17,7 @@ const Landing = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       const notes = await getNotes(false);
-      setNotesData(notes.data.data.slice(0, 4));
+      setNotesData(notes.data.data);
       setFilteredNotes(notes.data.data.slice(0, 4));
     };
 
@@ -44,7 +44,7 @@ const Landing = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen global-gradient overflow-x-hidden">
-      <Particle className="hidden lg:block"/>
+      <Particle className="hidden lg:block" />
       <div className="lg:w-1/2 w-full rounded-lg h-auto md:h-[60vh] flex flex-col items-center justify-center gap-6 px-4  z-10">
         <img
           src="landing.png"
@@ -57,9 +57,11 @@ const Landing = () => {
         <h4 className="text-base md:text-2xl text-white text-center">
           Your Gateway to Knowledge
         </h4>
-        
-        <h4 className="text-md lg:text-2xl text-yellow-300 text-center font-light animate-bounce">.. Still under development ..</h4>
-      
+
+        <h4 className="text-md lg:text-2xl text-yellow-300 text-center font-light animate-bounce">
+          .. Still under development ..
+        </h4>
+
         <div className="w-full flex items-center justify-center px-4">
           <Search searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         </div>
@@ -69,17 +71,24 @@ const Landing = () => {
           id="data"
           className="sm:w-full w-3/4 max-w-3xl pb-1 px-2 bg-white shadow-md mt-2 rounded-lg"
         >
-          {filteredNotes.map((note) => (
-            <a href={note.file_url.webViewLink} target="_blank" key={note._id}>
-              <div
-                className="w-full sm:my-2 sm:p-4 p-2 border-b cursor-pointer hover:bg-gray-100"
-                onClick={() => router.push('/all-notes')}
-              >
-                <h2 className="sm:text-xl text-sm font-bold">{note.title}</h2>
-                <p className="text-xs text-gray-600">{note.subject}</p>
-              </div>
-            </a>
-          ))}
+          {filteredNotes.map((note, index) => {
+            if (index < 3) {
+              return (
+                <a href="/all-notes" target="_blank" key={note._id}>
+                  <div
+                    className="w-full sm:my-2 sm:p-4 p-2 border-b cursor-pointer hover:bg-gray-100"
+                    onClick={() => router.push("/all-notes")}
+                  >
+                    <h2 className="sm:text-xl text-sm font-bold">
+                      {note.title}
+                    </h2>
+                    <p className="text-xs text-gray-600">{note.subject}</p>
+                  </div>
+                </a>
+              );
+            }
+            return null;
+          })}
         </div>
       )}
     </div>
