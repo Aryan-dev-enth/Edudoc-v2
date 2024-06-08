@@ -23,6 +23,7 @@
     "react": "^18",
     "react-animated-cursor": "^2.11.2",
     "react-animated-numbers": "^0.18.0",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-particles": "^2.12.2",

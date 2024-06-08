@@ -18,4 +18,7 @@ router.post("/increaseLikeCount/:id", notesController.increaseLikeCount);
 router.post("/increaseViewCount/:id", notesController.increaseViewCount);
 router.post("/increaseDownloadCount/:id", notesController.increaseDownloadCount);
 
+router.get("/getNotesCount", notesController.getNotesCount);
+
+router.get("/getTopAuthors", notesController.getTopAuthors);
 export default router;

@@ -260,6 +260,45 @@ class notesController {
       });
     }
   };
+
+
+  static getNotesCount = async (req, res) => {
+    try {
+      const count = await NoteModel.countDocuments();
+      res.send({ count });
+    } catch (error) {
+      res.status(500).json({
+        status: false,
+        message: error.message,
+      });
+    }
+  }
+  
+  static getTopAuthors = async (req, res) => {
+    try {
+      const topAuthors = await NoteModel.aggregate([
+        {
+          $group: {
+            _id: "$author",
+            count: { $sum: 1 }
+          }
+        },
+        {
+          $sort: { count: -1 }
+        },
+        {
+          $limit: 3
+        }
+      ]);
+  
+      res.send(topAuthors);
+    } catch (error) {
+      res.status(500).json({
+        status: false,
+        message: error.message,
+      });
+    }
+  }
 }
 
 

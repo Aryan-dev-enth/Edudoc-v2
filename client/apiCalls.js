@@ -10,7 +10,9 @@ const VERIFY_NOTE = process.env.NEXT_PUBLIC_VERIFY_NOTE;
 const INCREASE_LIKE_COUNT = process.env.NEXT_PUBLIC_LIKE_COUNT;
 const INCREASE_VIEW_COUNT = process.env.NEXT_PUBLIC_VIEW_COUNT;
 const INCREASE_DOWNLOAD_COUNT = process.env.NEXT_PUBLIC_DOWNLOAD_COUNT;
+const GET_NOTES_COUNT = process.env.NEXT_PUBLIC_GET_NOTES_COUNT;
 
+const GET_TOP_AUTHORS=  process.env.NEXT_PUBLIC_GET_TOP_AUTHORS;
 export const publishNotesAPI = async (formData) => {
   try {
     const response = await axios.post(
@@ -89,6 +91,25 @@ export const increaseDownloadCount = async(id) =>{
     const response = await axios.post(`${BASE_URL}${NOTES_ROUTE}${INCREASE_DOWNLOAD_COUNT}/${id}`)
     
     return response.data;
+  } catch (error) {
+    throw(error)
+  }
+}
+
+export const getNotesCount = async() => {
+  try {
+    const response = await axios.get(`${BASE_URL}${NOTES_ROUTE}${GET_NOTES_COUNT}`)
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    throw(error)
+  }
+}
+
+export const getTopAuthors = async() => {
+  try {
+    const response = await axios.get(`${BASE_URL}${NOTES_ROUTE}${GET_TOP_AUTHORS}`)
+    return response.data
   } catch (error) {
     throw(error)
   }
