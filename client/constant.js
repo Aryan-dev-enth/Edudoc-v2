@@ -22,12 +22,12 @@ export const navbarLinks = [
 export const dataSection = [
   {
     name: "Views",
-    number: "824",
-    tagLine: "Increaing day by day",
+    number: "1023",
+    tagLine: "Increasing day by day",
   },
   {
     name: "Visitors",
-    number: "173",
+    number: "187",
     tagLine: "Accross the Globe",
   },
   {
