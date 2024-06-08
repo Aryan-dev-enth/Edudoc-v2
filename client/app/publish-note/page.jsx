@@ -6,8 +6,8 @@ import { publishNotesAPI } from "@/apiCalls";
 import { DOCUMENT_TYPES, SUBJECT_OPTIONS, BRANCH_OPTIONS } from "@/constant";
 import ClipLoader from "react-spinners/ClipLoader";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { isLoaded, isSignedIn, useUser } from "@clerk/nextjs";
 import ScreenLoader from "@/components/ScreenLoader";
@@ -31,10 +31,11 @@ const Page = () => {
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
-    const maxFileSize = 50 * 1024 * 1024; 
+    const maxFileSize = 50 * 1024 * 1024;
 
     if (selectedFile.size > maxFileSize) {
       setErrorMessage("File size exceeds 50MB. Please choose a smaller file.");
+      toast.error("File size exceeds 50MB. Please choose a smaller file.");
       setFile(null);
     } else {
       setErrorMessage("");
@@ -85,31 +86,57 @@ const Page = () => {
       setSubject("");
 
       setSuccessMessage(response.message);
-      alert(response.message + "\nRefresh the tab for if any error is faced!");
+      toast.success(response.message + "Your study material has been sent for verification. You will receive an email update accordingly!");
     } catch (error) {
       setErrorMessage("Failed to upload. Please try again.");
+      toast.error("Failed to upload. Please try again.");
     }
 
     setUploading(false);
   };
-  if (!isLoaded || !isSignedIn) {
-    return (
-      <div className="w-screen h-screen bg-p[#fffff7] flex flex-col justify-center items-center gap-4">
 
-        <img src="crying.jpg" alt="" className="h-1/4 rounded-xl " />
+  if (!isLoaded || !isSignedIn) {
+    toast.error("Login to continue!");
+    return (
+      <div className="w-screen h-screen bg-[#fffff7] flex flex-col justify-center items-center gap-4">
+        <ToastContainer
+          theme="light"
+          position="top-right"
+          closeOnClick
+          className="text-black z-30"
+        />
+
+        <img src="crying.jpg" alt="" className="h-1/4 rounded-xl" />
         <h1 className="lg:text-2xl text-md font-light">
-          Be logged in to contribute any document !
+          Be logged in to contribute any document!
         </h1>
       </div>
     );
   }
-  console.log(user.emailAddresses[0].emailAddress);
+
   if (isUploading) {
-    return <ScreenLoader />;
+    toast.success("Uploading to server");
+    return (
+      <div>
+        <ToastContainer
+          theme="light"
+          position="top-right"
+          closeOnClick
+          className="text-black z-30"
+        />
+        <ScreenLoader />
+      </div>
+    );
   }
 
   return (
     <div className="container mx-auto px-4 bg-[#fffff7]">
+      <ToastContainer
+        theme="light"
+        position="top-right"
+        closeOnClick
+        className="text-black"
+      />
       <div className="flex lg:flex-row items-center justify-center gap-5 md:min-h-screen p-5">
         <div className="lg:w-1/2 h-full flex justify-center md:justify-start items-center pt-28">
           <Lottie
