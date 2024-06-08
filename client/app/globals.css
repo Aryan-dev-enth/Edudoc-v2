@@ -4,7 +4,21 @@
 
 html {
   scroll-behavior: smooth;
+  
+  --cursor-color: #333
+  
 }
+
+.global-gradient {
+  background: linear-gradient(to bottom, #2a0316 98%, #ffffff);
+}
+
+
+html.dark-mode {
+  --cursor-color: #fff
+  
+}
+
 body{
   overflow-x: hidden;
 }
