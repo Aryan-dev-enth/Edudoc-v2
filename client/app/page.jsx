@@ -28,8 +28,9 @@ export default function Home() {
       <Landing />
 
       <DataSection />
-      <Footer />
+     
       <FewFiles />
+      <Footer />
      
     </div>
   );

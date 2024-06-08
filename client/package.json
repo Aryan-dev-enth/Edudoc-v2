@@ -27,6 +27,7 @@
     "react-icons": "^5.2.1",
     "react-particles": "^2.12.2",
     "react-spinners": "^0.13.8",
+    "react-toastify": "^10.0.5",
     "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {

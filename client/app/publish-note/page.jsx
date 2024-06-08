@@ -6,6 +6,9 @@ import { publishNotesAPI } from "@/apiCalls";
 import { DOCUMENT_TYPES, SUBJECT_OPTIONS, BRANCH_OPTIONS } from "@/constant";
 import ClipLoader from "react-spinners/ClipLoader";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { isLoaded, isSignedIn, useUser } from "@clerk/nextjs";
 import ScreenLoader from "@/components/ScreenLoader";
 import { sendEmail } from "@/services/emailService";
