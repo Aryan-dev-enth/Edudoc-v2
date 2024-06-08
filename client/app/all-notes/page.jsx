@@ -13,7 +13,7 @@ const Page = () => {
   const [allNotes, setAllNotes] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
-  const [filterType, setFilterType] = useState("all");
+  const [filterType, setFilterType] = useState("question_paper");
 
   useEffect(() => {
     const fetchNotes = async () => {
