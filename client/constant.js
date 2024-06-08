@@ -13,6 +13,10 @@ export const navbarLinks = [
     name: "Notes & Question Papers",
     url: "/all-notes",
   },
+  {
+    name: "Team",
+    url: "/Team",
+  },
 ];
 
 export const dataSection = [
