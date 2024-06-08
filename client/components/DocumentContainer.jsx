@@ -10,7 +10,7 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        setDocumentsPerPage(3);
+        setDocumentsPerPage(5);
       } else {
         setDocumentsPerPage(10);
       }
@@ -98,7 +98,7 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
           <button
             onClick={handleFirstPage}
             disabled={currentPage === 1}
-            className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg ${
+            className={`px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg ${
               currentPage === 1
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                 : "bg-blue-500 text-white hover:bg-blue-600"
@@ -109,7 +109,7 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
           <button
             onClick={handlePrevPage}
             disabled={currentPage === 1}
-            className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg ${
+            className={`px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg ${
               currentPage === 1
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                 : "bg-blue-500 text-white hover:bg-blue-600"
@@ -117,13 +117,13 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
           >
             Previous
           </button>
-          <span className="px-2 py-1 sm:px-4 sm:py-2 rounded-lg bg-gray-200 text-gray-700">
-            Page {currentPage} of {totalPages}
+          <span className="px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg bg-gray-200 text-gray-700">
+             {currentPage} of {totalPages}
           </span>
           <button
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
-            className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg ${
+            className={`px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg ${
               currentPage === totalPages
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                 : "bg-blue-500 text-white hover:bg-blue-600"
@@ -134,7 +134,7 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
           <button
             onClick={handleLastPage}
             disabled={currentPage === totalPages}
-            className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg ${
+            className={`px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg ${
               currentPage === totalPages
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                 : "bg-blue-500 text-white hover:bg-blue-600"
@@ -151,11 +151,11 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
         return null;
       })}
       {totalPages > 1 && (
-        <div className="flex justify-between mt-4 space-x-2">
+        <div className="justify-between mt-4 space-x-2 hidden md:flex">
           <button
             onClick={handleFirstPage}
             disabled={currentPage === 1}
-            className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg ${
+            className={`px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg ${
               currentPage === 1
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                 : "bg-blue-500 text-white hover:bg-blue-600"
@@ -166,7 +166,7 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
           <button
             onClick={handlePrevPage}
             disabled={currentPage === 1}
-            className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg ${
+            className={`px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg ${
               currentPage === 1
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                 : "bg-blue-500 text-white hover:bg-blue-600"
@@ -174,13 +174,13 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
           >
             Previous
           </button>
-          <span className="px-2 py-1 sm:px-4 sm:py-2 rounded-lg bg-gray-200 text-gray-700">
-            Page {currentPage} of {totalPages}
+          <span className="px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg bg-gray-200 text-gray-700">
+            {currentPage} of {totalPages}
           </span>
           <button
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
-            className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg ${
+            className={`px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg ${
               currentPage === totalPages
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                 : "bg-blue-500 text-white hover:bg-blue-600"
@@ -191,7 +191,7 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
           <button
             onClick={handleLastPage}
             disabled={currentPage === totalPages}
-            className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg ${
+            className={`px-2 py-1 sm:px-4 sm:py-2 sm:text-md text-xs rounded-lg ${
               currentPage === totalPages
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                 : "bg-blue-500 text-white hover:bg-blue-600"
