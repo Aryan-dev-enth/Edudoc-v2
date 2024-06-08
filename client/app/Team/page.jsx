@@ -10,7 +10,7 @@ const TeamPage = () => {
     {
       name: 'Aryan Singh',
       role: 'Fullstack Developer',
-      imgSrc: '/aryan.JPG',
+      imgSrc: '/aryan.webp',
       twitter: 'https://twitter.com/just_i_aryan_28',
       linkedin: 'https://www.linkedin.com/in/aryan-singh-459b6b225',
       github: 'https://github.com/Aryan-dev-enth',
