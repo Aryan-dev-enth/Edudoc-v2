@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import DocumentItem from "./DocumentItem";
+import { BRANCH_OPTIONS, SUBJECT_OPTIONS } from "@/constant";
 
 const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
   const [sortCriteria, setSortCriteria] = useState("trending");
@@ -80,18 +81,44 @@ const DocumentContainer = ({ data, setUpdated, searchQuery }) => {
   };
 
   return (
-    <div className="w-full sm:w-[90%] h-full p-4 rounded-lg mt-4">
-      <div className="w-full flex justify-end mb-4">
+    <div className="w-full sm:w-[90%] h-full p-4 rounded-lg mt-4 ">
+      <div className=" w-full flex flex-row  justify-center items-end gap-2 p-2">
+        <div className="w-1/2 flex  justify-end mb-4">
         <select
           id="sortCriteria"
           value={sortCriteria}
           onChange={handleSortChange}
-          className="p-2 border border-gray-300 rounded"
+          className="p-2 border border-gray-300 rounded w-full text-sm lg:text-md"
         >
-          <option value="trending">Trending</option>
-          <option value="latest">Latest</option>
-          <option value="alphabetical">Alphabetical</option>
+          {BRANCH_OPTIONS.map((branch, index)=>(
+            <option className="text-sm lg:text-md" value={branch.value}>{branch.label}</option>
+          ))}
         </select>
+      </div>
+      <div className="w-1/2 flex justify-end mb-4">
+        <select
+          id="sortCriteria"
+          value={sortCriteria}
+          onChange={handleSortChange}
+          className="p-2 border border-gray-300 rounded w-full text-sm lg:text-md"
+        >
+         {SUBJECT_OPTIONS.map((subject, index)=>(
+            <option className="text-sm lg:text-md" value={subject.value}>{subject.label}</option>
+          ))}
+        </select>
+      </div>
+      <div className="w-1/2 flex justify-end mb-4">
+        <select
+          id="sortCriteria"
+          value={sortCriteria}
+          onChange={handleSortChange}
+          className="p-2 border border-gray-300 rounded w-full text-sm lg:text-md"
+        >
+          <option className="text-sm lg:text-md" value="trending">Trending</option>
+          <option className="text-sm lg:text-md" value="latest">Latest</option>
+          <option className="text-sm lg:text-md" value="alphabetical">Alphabetical</option>
+        </select>
+      </div>
       </div>
       {totalPages > 1 && (
         <div className="flex justify-between mt-4 space-x-2">
