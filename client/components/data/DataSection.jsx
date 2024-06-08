@@ -34,7 +34,7 @@ const DataSection = () => {
 
   return (
     <div id="data" className="w-full mt-20 lg:mt-32 h-auto flex flex-col justify-center items-center p-4">
-      <Confetti width={window.innerWidth} height={window.innerHeight-100} className="mt-[100vh]" numberOfPieces={100} gravity={0.1}/>
+      <Confetti width={window.innerWidth} height={window.innerHeight-100} className="mt-[100vh]" numberOfPieces={70} gravity={0.1} />
       <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center px-2">
         {notesCount} Notes published, let's grow stronger.
       </h1>
