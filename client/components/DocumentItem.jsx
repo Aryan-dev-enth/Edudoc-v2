@@ -128,7 +128,7 @@ const DocumentItem = ({ data, setUpdated }) => {
             className="text-blue-500 hover:text-blue-700 flex items-center space-x-1 text-xs md:text-sm transition-colors duration-200"
             onClick={handleView}
           > 
-            <AiOutlineEye size={20} /> <span>{viewCount}</span>
+            <AiOutlineEye size={20} />View PDF <span>{viewCount}</span>
           </a>
           <a
             href={webContentLink}
