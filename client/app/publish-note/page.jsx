@@ -101,7 +101,7 @@ const Page = () => {
       <div className="w-screen h-screen bg-[#fffff7] flex flex-col justify-center items-center gap-4">
         <ToastContainer
           theme="light"
-          position="top-right"
+          position="bottom-right"
           closeOnClick
           className="text-black z-30"
         />
