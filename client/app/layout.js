@@ -5,7 +5,6 @@ import { ClerkProvider } from "@clerk/nextjs";
 
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import AnimatedCursor from "react-animated-cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,13 +23,7 @@ export default function RootLayout({ children }) {
           {children}
           <Analytics />
           <SpeedInsights />
-          <AnimatedCursor color="193, 193, 0"
-            innerScale={0.5}
-            outerScale={3}
-            outerSize={15}
-            outerAlpha={0.4}
-            
-          />
+          
         </body>
       </html>
     </ClerkProvider>
