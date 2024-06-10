@@ -24,9 +24,11 @@
     "react-animated-cursor": "^2.11.2",
     "react-animated-numbers": "^0.18.0",
     "react-confetti": "^6.1.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-particles": "^2.12.2",
+    "react-share": "^5.1.0",
     "react-spinners": "^0.13.8",
     "react-toastify": "^10.0.5",
     "tsparticles-slim": "^2.12.0"
