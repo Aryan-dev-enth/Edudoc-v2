@@ -9,7 +9,7 @@ const ShareButton = ({ title, pdfLink }) => {
   const [copied, setCopied] = useState(false);
   const url = generatePdfLink(pdfLink);
   const websiteUrl = "https://edudoc.vercel.app/";
-  const text = `Check out this document: ${url}`;
+  const text = `Check out this document: ${title} : ${url}`;
   const stats = `\n1000+ Views Increasing day by day 1000+ Visitors Across the Globe Users Growing!`;
   const callToAction = `\nCheck website: ${websiteUrl} to see more notes and contribute.`;
   const promotionalMessage = "Discover valuable insights and resources at EduDoc!";
