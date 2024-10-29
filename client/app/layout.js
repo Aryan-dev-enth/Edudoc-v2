@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     <head>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2966807010235280"
      crossorigin="anonymous"></script>
-    <head/>
+       </head>
         <body className={inter.className}>
           <Navbar />
           
